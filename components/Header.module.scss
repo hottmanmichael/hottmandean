@@ -64,13 +64,13 @@
   // background-color: darken(white, 5%);
   padding: 3rem 1rem;
   z-index: 1;
-  margin-top: 1px;
+  margin-top: $header-height;
 
   // Transitions
   z-index: -1;
   opacity: 0;
   // Transition out
-  transition: z-index 0ms 250ms, opacity ease 200ms 150ms;
+  transition: z-index 0ms 250ms, opacity ease 200ms 50ms;
 
   @include respond-to("large") {
     display: none;
