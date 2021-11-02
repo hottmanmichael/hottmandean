@@ -1,0 +1,76 @@
+@import "../styles/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,600&family=Montserrat:wght@300,900display=swap");
+
+$h1Size: 4rem;
+$h2Size: 2.8rem;
+$h3Size: 1.5rem;
+
+$h4Size: 2.8rem;
+$h5Size: 1.4rem;
+$h6Size: 1.2rem;
+
+@mixin resizeFont($base) {
+  font-size: calc($base * 0.65);
+
+  @include respond-to("small") {
+    font-size: calc($base * 0.75);
+  }
+
+  @include respond-to("medium") {
+    font-size: calc($base * 0.9);
+  }
+
+  @include respond-to("large") {
+    font-size: $base;
+  }
+}
+
+/* Typography */
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+}
+
+b,
+strong {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Lora", serif;
+  font-weight: 500;
+  // font-style: italic;
+}
+
+h1 {
+  @include resizeFont($h1Size);
+}
+
+h2 {
+  @include resizeFont($h2Size);
+}
+
+h3 {
+  @include resizeFont($h3Size);
+}
+
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+h4 {
+  @include resizeFont($h4Size);
+}
+h5 {
+  @include resizeFont($h5Size);
+}
+h6 {
+  font-size: $h6Size;
+}
