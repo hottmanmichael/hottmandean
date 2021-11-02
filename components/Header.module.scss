@@ -60,27 +60,27 @@
   align-items: center;
   justify-content: flex-start;
   flex-direction: column;
-  // background-color: darken(white, 10%);
   background-color: white;
+  // background-color: darken(white, 5%);
   padding: 3rem 1rem;
   z-index: 1;
   margin-top: 1px;
 
   // Transitions
+  z-index: -1;
   opacity: 0;
-  transform: translateY(-100vh);
-  transition: all ease 250ms;
-  // transition: transform ease-in 200ms;
+  // Transition out
+  transition: z-index 0ms 250ms, opacity ease 200ms 150ms;
 
   @include respond-to("large") {
     display: none;
   }
 
   &.MobileMenuOpen {
-    transform: translateY(0 + $header-height);
-    transition: all ease 200ms;
+    z-index: 1;
     opacity: 1;
-    // z-index: 1;
+    // Transition in
+    transition: z-index 0ms 0ms, opacity ease 250ms;
   }
 }
 
