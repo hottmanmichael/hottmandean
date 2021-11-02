@@ -45,7 +45,7 @@ function MobileMenuItem({ label, href, onRoute }: MobileMenuItemProps) {
   const { asPath } = useRouter();
 
   return (
-    <Link href={href}>
+    <Link href={href} passHref>
       <li onClick={onRoute} className={cx("mb-3", styles.MobileMenuItem)}>
         <h4
           className={cx(styles.MenuItemText, {
@@ -74,7 +74,11 @@ function MobileMenu({
     >
       <ul>
         {ROUTE_CONFIG.map((config) => (
-          <MobileMenuItem {...config} onRoute={toggleIsMenuOpen} />
+          <MobileMenuItem
+            {...config}
+            onRoute={toggleIsMenuOpen}
+            key={`mobile_${config.href}`}
+          />
         ))}
       </ul>
     </div>
@@ -87,7 +91,7 @@ function DesktopMenu() {
   return (
     <div className={styles.DesktopMenu}>
       {ROUTE_CONFIG.map(({ href, label }) => (
-        <Link href={href}>
+        <Link href={href} key={`desktop_${href}`} passHref>
           <div className={styles.DesktopMenuItem}>
             <h6
               className={cx(styles.MenuItemText, {
@@ -119,7 +123,7 @@ function Header() {
         >
           <FiMenu className={styles.MobileMenuIcon} />
         </div>
-        <Link href="/">
+        <Link href="/" passHref>
           <h2 className={styles.HeaderTitle}>Claire & Michael</h2>
         </Link>
         <DesktopMenu />
