@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { FiMenu } from "react-icons/fi";
+import { FiMenu, FiX } from "react-icons/fi";
 import cx from "classnames";
 
 import styles from "./Header.module.scss";
@@ -49,7 +49,7 @@ function MobileMenuItem({ label, href, onRoute }: MobileMenuItemProps) {
       <li onClick={onRoute} className={cx("mb-3", styles.MobileMenuItem)}>
         <h4
           className={cx(styles.MenuItemText, {
-            [styles.MenuItemActive]: asPath === href,
+            [styles.MenuItemTextActive]: asPath === href,
           })}
         >
           {label}
@@ -121,7 +121,16 @@ function Header() {
           onClick={toggleIsMenuOpen}
           className={styles.MobileMenuIconWrapper}
         >
-          <FiMenu className={styles.MobileMenuIcon} />
+          <FiMenu
+            className={cx(styles.MobileMenuIcon, styles.MobileMenuOpenIcon, {
+              [styles.MobileMenuIconActive]: !isOpen,
+            })}
+          />
+          <FiX
+            className={cx(styles.MobileMenuIcon, styles.MobileMenuCloseIcon, {
+              [styles.MobileMenuIconActive]: isOpen,
+            })}
+          />
         </div>
         <Link href="/" passHref>
           <h2 className={styles.HeaderTitle}>Claire & Michael</h2>
