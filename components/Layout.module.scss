@@ -1,7 +1,6 @@
 @import "../styles/variables.scss";
 
 .LayoutWrapper {
-  height: calc(100% - $header-height);
   margin-top: $header-height;
   position: relative;
   z-index: 1;

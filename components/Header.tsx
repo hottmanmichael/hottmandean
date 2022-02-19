@@ -122,7 +122,7 @@ function Header() {
       }}
     >
       <div className={styles.HeaderContent}>
-        <div
+        {/* <div
           onClick={toggleIsMenuOpen}
           className={styles.MobileMenuIconWrapper}
         >
@@ -136,11 +136,11 @@ function Header() {
               [styles.MobileMenuIconActive]: isOpen,
             })}
           />
-        </div>
+        </div> */}
         <Link href="/" passHref>
           <h2 className={styles.HeaderTitle}>Claire & Michael</h2>
         </Link>
-        <p>More details coming soon...</p>
+        <p className="ml-3">More details coming soon...</p>
         {/* <DesktopMenu /> */}
       </div>
       {/* <MobileMenu isOpen={isOpen} toggleIsMenuOpen={toggleIsMenuOpen} /> */}

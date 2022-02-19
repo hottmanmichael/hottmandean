@@ -26,10 +26,10 @@ $screen-height: calc(100vh - $header-height);
 
 .BackgroundImageWrapper {
   position: absolute;
-  overflow: hidden;
   height: $screen-height;
   width: 100%;
   overflow: hidden;
+  pointer-events: none;
 }
 
 .BackgroundImage {

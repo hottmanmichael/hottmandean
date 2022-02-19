@@ -20,3 +20,9 @@ a {
 * {
   box-sizing: border-box;
 }
+
+// Without this there's a small gap on the right side of the screen
+.row {
+  margin-left: 0;
+  margin-right: 0;
+}
