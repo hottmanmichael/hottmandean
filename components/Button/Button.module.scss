@@ -1,0 +1,19 @@
+.Button {
+  border-radius: 4px;
+  padding: 0.7rem 1.8rem;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  transition: all 0.15s;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  font-size: 0.9rem;
+  border: none;
+  background-color: #81945f;
+  color: white;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(#81945f, 0.8);
+  }
+}

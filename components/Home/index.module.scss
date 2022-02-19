@@ -1,0 +1,57 @@
+@import "../../styles/variables.scss";
+
+$screen-height: calc(100vh - $header-height);
+
+.FullScreenCentered {
+  padding: 6rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: $screen-height;
+}
+
+.Heading {
+  text-align: center;
+}
+
+.HeadingText {
+  margin-bottom: 3rem;
+}
+
+.SubHeadingText {
+  margin-bottom: 5rem;
+}
+
+.BackgroundImageWrapper {
+  position: absolute;
+  overflow: hidden;
+  height: $screen-height;
+  width: 100%;
+  overflow: hidden;
+}
+
+.BackgroundImage {
+  max-height: $screen-height;
+  z-index: -1;
+}
+
+.Spacer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.GridItem {
+  margin-bottom: 6rem;
+}
+
+.GridItemTitle {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
+}

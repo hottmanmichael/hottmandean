@@ -115,7 +115,12 @@ function Header() {
   }
 
   return (
-    <header className={styles.Header}>
+    <header
+      className={styles.Header}
+      style={{
+        zIndex: isOpen ? 100 : 2,
+      }}
+    >
       <div className={styles.HeaderContent}>
         <div
           onClick={toggleIsMenuOpen}
@@ -135,9 +140,10 @@ function Header() {
         <Link href="/" passHref>
           <h2 className={styles.HeaderTitle}>Claire & Michael</h2>
         </Link>
-        <DesktopMenu />
+        <p>More details coming soon...</p>
+        {/* <DesktopMenu /> */}
       </div>
-      <MobileMenu isOpen={isOpen} toggleIsMenuOpen={toggleIsMenuOpen} />
+      {/* <MobileMenu isOpen={isOpen} toggleIsMenuOpen={toggleIsMenuOpen} /> */}
     </header>
   );
 }

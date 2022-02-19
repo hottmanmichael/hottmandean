@@ -1,11 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,600&family=Montserrat:wght@300&family=Oswald&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;600&family=Montserrat:wght@300,600,900&family=Oswald&display=swap");
+@import "./variables.scss";
 
 html,
 body {
+  width: 100vw;
+  position: relative;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: $color-off-white;
 }
 
 a {

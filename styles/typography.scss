@@ -1,8 +1,9 @@
 @import "../styles/variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,600&family=Montserrat:wght@300,900display=swap");
 
+$h0Size: 6rem;
 $h1Size: 4rem;
-$h2Size: 2.8rem;
+$h2Size: 2.2rem;
 $h3Size: 1.5rem;
 
 $h4Size: 2.8rem;
@@ -43,11 +44,13 @@ h2,
 h3 {
   font-family: "Lora", serif;
   font-weight: 500;
-  // font-style: italic;
 }
 
 h1 {
   @include resizeFont($h1Size);
+  &.extra {
+    @include resizeFont($h0Size);
+  }
 }
 
 h2 {
@@ -73,4 +76,8 @@ h5 {
 }
 h6 {
   font-size: $h6Size;
+}
+
+p.small {
+  font-size: 0.8rem;
 }
