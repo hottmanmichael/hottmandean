@@ -9,9 +9,12 @@ import styles from "./index.module.scss";
 
 export default function Home() {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
-  // 1023 matches flexboxgrid
   const isMediumScreen = useMediaQuery("(max-width: 1023px)");
-  const bgImage = require("../images/C&M_Engagement_JPEG_1200px_00020.jpg");
+
+  const headerWrapperClassName = cx(styles.FullScreenCentered);
+  const headingClassName = cx(styles.Heading, {
+    [styles.HeadingCenter]: isMediumScreen,
+  });
 
   return (
     <>
@@ -24,13 +27,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div
-        className={cx(styles.BackgroundImageWrapper, {
-          [styles.BackgroundImageWrapper_SmallScreen]: isSmallScreen,
-        })}
-      >
+      <div className={cx(styles.BackgroundImageWrapper)}>
         <Image
-          height="100%"
           alt="background"
           layout="fill"
           objectFit="cover"
@@ -38,15 +36,11 @@ export default function Home() {
           priority
           placeholder="blur"
           className={styles.BackgroundImage}
-          src={bgImage}
+          src={require("../images/C&M_Engagement_JPEG_1200px_00020.jpg")}
         />
       </div>
-      <div
-        className={cx(styles.FullScreenCentered, {
-          [styles.FullScreenCentered_SmallScreen]: isSmallScreen,
-        })}
-      >
-        <div className={styles.Heading}>
+      <div className={headerWrapperClassName}>
+        <div className={headingClassName}>
           <h1 className={cx(styles.HeadingText, "extra")}>Claire & Michael</h1>
         </div>
       </div>
@@ -101,7 +95,7 @@ export default function Home() {
               />
             </div>
           ) : (
-            <div className="col-md col-xs-0 p-0">
+            <div className="col-md col-xs-0 p-1">
               <Image
                 src={require("../images/C&M_Engagement_JPEG_1200px_00011.jpg")}
                 alt="image"
