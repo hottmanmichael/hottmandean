@@ -96,9 +96,9 @@ export default function Home() {
           rotation={-58}
           size={1200}
         />
-        <Blob type="cactus1" bottom={-12} left={-90} opacity={1} size={300} />
-        <Blob type="cactus3" bottom={-10} left={105} opacity={1} size={85} />
-        <Blob type="cactus2" bottom={-20} left={180} opacity={1} size={200} />
+        <Blob type="cactus1" bottom={-12} left={-90} size={300} />
+        <Blob type="cactus3" bottom={-10} left={105} size={85} />
+        <Blob type="cactus2" bottom={-20} left={180} size={200} />
       </Section>
       <Section className="pt-0" bgColor="off-white">
         <div className="row middle-xs">
@@ -142,11 +142,39 @@ export default function Home() {
                 style={{
                   width: "100%",
                   height: "auto",
+                  borderBottomLeftRadius: 10,
                 }}
               />
             </div>
           )}
         </div>
+      </Section>
+      <Section height={400} className="row center-xs middle-xs">
+        <div className="col-xs-12">
+          <Typography tag="h3" className="mb-1">
+            More details coming soon...
+          </Typography>
+        </div>
+        <div className="col-xs"></div>
+
+        <Blob
+          type="purple"
+          right={-290}
+          opacity={0.2}
+          top={120}
+          rotation={0}
+          size={1000}
+        />
+        <Blob type="cactus3" bottom={-12} right={90} size={80} />
+        <Blob type="cactus5" bottom={-12} right={-1} size={90} />
+        <Blob
+          type="cactus7"
+          bottom={-20}
+          right={28}
+          rotation={-3}
+          opacity={1}
+          size={85}
+        />
       </Section>
       {/* <Section height={SectionHeight.Medium} bgColor="pastel-pink"></Section> */}
       {/* <div className="row center-xs mb-5 p-5">
