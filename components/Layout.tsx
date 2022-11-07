@@ -11,13 +11,13 @@ function Footer() {
   return (
     <footer className={styles.Footer}>
       <p className="mb-1">
-        Photography courtesy of{" "}
+        Thanks to{" "}
         <a
           rel="noreferrer"
           target="_blank"
           href="https://www.rknightphoto.com/"
         >
-          Rob Knight
+          Rob Knight Photography
         </a>
       </p>
       <p className="mb-1">© 2022, Michael Hottman & Claire Dean</p>
