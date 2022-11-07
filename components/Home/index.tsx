@@ -11,7 +11,7 @@ export default function Home() {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
   const isMediumScreen = useMediaQuery("(max-width: 1023px)");
 
-  const headerWrapperClassName = cx(styles.FullScreenCentered);
+  const headerWrapperClassName = cx("px-1", styles.FullScreenCentered);
   const headingClassName = cx(styles.Heading, {
     [styles.HeadingCenter]: isMediumScreen,
   });

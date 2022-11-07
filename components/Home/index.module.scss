@@ -17,6 +17,7 @@ $screen-height: calc(100vh - env(safe-area-inset-bottom));
   }
 
   .HeadingCenter {
+    margin-bottom: 3rem;
     word-spacing: 9999999px;
   }
 }
