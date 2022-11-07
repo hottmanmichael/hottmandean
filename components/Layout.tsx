@@ -4,6 +4,7 @@ import styles from "./Layout.module.scss";
 
 type LayoutProps = {
   children: ReactNode;
+  className?: string;
 };
 
 function Footer() {
@@ -24,10 +25,10 @@ function Footer() {
   );
 }
 
-function Layout({ children }: LayoutProps) {
+function Layout({ children, className }: LayoutProps) {
   return (
-    <div>
-      <Header />
+    <div className={className}>
+      {/* <Header /> */}
       <div className={styles.LayoutWrapper}>{children}</div>
       <Footer />
     </div>

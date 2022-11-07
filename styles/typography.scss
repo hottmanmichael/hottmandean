@@ -1,7 +1,28 @@
 @import "../styles/variables.scss";
 @import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,600&family=Montserrat:wght@300,900display=swap");
 
-$h0Size: 6rem;
+@font-face {
+  font-family: "Anaktoria";
+  src: url("../public/fonts/Anaktoria.woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anaktoria";
+  src: url("../public/fonts/Anaktoria.woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anaktoria";
+  src: url("../public/fonts/Anaktoria.woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+$h0Size: 9rem;
 $h1Size: 4rem;
 $h2Size: 2.2rem;
 $h3Size: 1.5rem;
@@ -42,7 +63,7 @@ strong {
 h1,
 h2,
 h3 {
-  font-family: "Lora", serif;
+  font-family: "Anaktoria", serif;
   font-weight: 500;
 }
 

@@ -1,33 +1,18 @@
-import { ReactNode } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import cx from "classnames";
-import { GiCactusPot, GiCactus, GiAgave, GiFlowerPot } from "react-icons/gi";
-import styles from "./index.module.scss";
-import { Button } from "../Button";
+import { useMediaQuery } from "../../hooks";
+import { Section, SectionHeight } from "../Section";
+import { Blob } from "../Blob";
 
-const GridItem = ({
-  title,
-  subtitle,
-  children,
-  Icon,
-}: {
-  title: string;
-  subtitle?: string;
-  children?: ReactNode;
-  Icon: typeof GiCactus | typeof GiCactusPot | typeof GiAgave;
-}) => (
-  <div className={cx(styles.GridItem, "col-xs-12 col-md-4")}>
-    <h6 className={styles.GridItemTitle}>{title}</h6>
-    <div className={cx(styles.Spacer, "row center-xs")}>
-      <Icon size={30} />
-    </div>
-    {subtitle && <h2 className="mb-2">{subtitle}</h2>}
-    {children ?? null}
-  </div>
-);
+import styles from "./index.module.scss";
 
 export default function Home() {
+  const isSmallScreen = useMediaQuery("(max-width: 600px)");
+  // 1023 matches flexboxgrid
+  const isMediumScreen = useMediaQuery("(max-width: 1023px)");
+  const bgImage = require("../images/C&M_Engagement_JPEG_1200px_00020.jpg");
+
   return (
     <>
       <Head>
@@ -39,28 +24,95 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div className={styles.BackgroundImageWrapper}>
+      <div
+        className={cx(styles.BackgroundImageWrapper, {
+          [styles.BackgroundImageWrapper_SmallScreen]: isSmallScreen,
+        })}
+      >
         <Image
           height="100%"
           alt="background"
           layout="fill"
           objectFit="cover"
           objectPosition="center"
+          priority
+          placeholder="blur"
           className={styles.BackgroundImage}
-          src={require("../images/temp1.jpg")}
+          src={bgImage}
         />
       </div>
-      <div className={styles.FullScreenCentered}>
+      <div
+        className={cx(styles.FullScreenCentered, {
+          [styles.FullScreenCentered_SmallScreen]: isSmallScreen,
+        })}
+      >
         <div className={styles.Heading}>
           <h1 className={cx(styles.HeadingText, "extra")}>Claire & Michael</h1>
-          <h3 className={styles.SubHeadingText}>
-            <span>June 9th, 2023</span>
-            <span className="ml-2 mr-2">|</span>
-            <span>Denver, Colorado</span>
-          </h3>
         </div>
       </div>
-      <div className="row center-xs mb-5 p-5">
+      <Section height={SectionHeight.Medium}>
+        <div style={{ height: "100%" }} className="col-xs row center-xs">
+          <h2 className="col-xs-12 center-xs py-4">
+            {isSmallScreen ? (
+              <>
+                <div className="col-xs-12 mb-3">June 9th, 2023</div>
+                <div className="col-xs-12">Denver, Colorado</div>
+              </>
+            ) : (
+              <>
+                <span>June 9th, 2023</span>
+                <span className="ml-2 mr-2">|</span>
+                <span>Denver, Colorado</span>
+              </>
+            )}
+          </h2>
+        </div>
+        <Blob
+          color="green"
+          left={-256}
+          opacity={0.35}
+          top={10}
+          rotation={-58}
+          size={1200}
+        />
+        <Blob color="cactus1" bottom={-12} left={-90} opacity={1} size={300} />
+        <Blob color="cactus3" bottom={-10} left={105} opacity={1} size={85} />
+        <Blob color="cactus2" bottom={-20} left={180} opacity={1} size={200} />
+      </Section>
+      <Section className="pt-0" bgColor="off-white">
+        <div className="row middle-xs">
+          <div className="col-md-8 col-xs-12 pl-0 py-5">
+            <div className="row center-xs middle-xs p-3">
+              <div className="col-xs-12">
+                <h1 className="mb-5">The Celebration</h1>
+                <h2 className="mb-1 mt-2d">Skylight</h2>
+                <h3 className="col-xs-12 mb-3">June 9th, 2023 at 6pm</h3>
+                <p className="mb-1">833 Santa Fe Drive</p>
+                <p>Denver, CO 80204</p>
+              </div>
+            </div>
+          </div>
+          {isMediumScreen ? (
+            <div className="col-md-0 col-xs-12 p-0">
+              <Image
+                src={require("../images/C&M_Engagement_JPEG_1200px_00017.jpg")}
+                alt="image"
+                layout="responsive"
+              />
+            </div>
+          ) : (
+            <div className="col-md col-xs-0 p-0">
+              <Image
+                src={require("../images/C&M_Engagement_JPEG_1200px_00011.jpg")}
+                alt="image"
+                layout="responsive"
+              />
+            </div>
+          )}
+        </div>
+      </Section>
+      {/* <Section height={SectionHeight.Medium} bgColor="pastel-pink"></Section> */}
+      {/* <div className="row center-xs mb-5 p-5">
         <GridItem Icon={GiCactusPot} title="Date" subtitle="June 9th, 2023">
           <p className="mb-1">Ceremony at [?]</p>
           <p className="mb-1">Dinner at [?]</p>
@@ -81,7 +133,7 @@ export default function Home() {
           <p className="mb-2">Please RSVP before [?]</p>
           <Button>RSVP</Button>
         </GridItem>
-      </div>
+      </div> */}
     </>
   );
 }
