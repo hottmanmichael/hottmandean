@@ -1,5 +1,4 @@
 @import "../styles/variables.scss";
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap");
 
 @font-face {
   font-family: "Anaktoria";
@@ -49,14 +48,14 @@ $h6Size: 1.2rem;
 
 /* Typography */
 body {
-  font-family: "Quicksand", sans-serif;
+  font-family: Quicksand, sans-serif;
   font-size: 16px;
   font-weight: 400;
 }
 
 b,
 strong {
-  font-family: "Quicksand", sans-serif;
+  font-family: Quicksand, sans-serif;
   font-weight: 600;
 }
 
