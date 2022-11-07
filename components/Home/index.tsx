@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import cx from "classnames";
 import { useMediaQuery } from "../../hooks";
 import { Section, SectionHeight } from "../Section";
@@ -30,13 +30,16 @@ export default function Home() {
       <div className={cx(styles.BackgroundImageWrapper)}>
         <Image
           alt="background"
-          layout="fill"
-          objectFit="cover"
-          objectPosition="center"
           priority
           placeholder="blur"
           className={styles.BackgroundImage}
           src={require("../images/C&M_Engagement_JPEG_1200px_00020.jpg")}
+          fill
+          sizes="100vw"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+          }}
         />
       </div>
       <div className={headerWrapperClassName}>
@@ -91,7 +94,11 @@ export default function Home() {
               <Image
                 src={require("../images/C&M_Engagement_JPEG_1200px_00017.jpg")}
                 alt="image"
-                layout="responsive"
+                sizes="100vw"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
               />
             </div>
           ) : (
@@ -99,7 +106,11 @@ export default function Home() {
               <Image
                 src={require("../images/C&M_Engagement_JPEG_1200px_00011.jpg")}
                 alt="image"
-                layout="responsive"
+                sizes="100vw"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                }}
               />
             </div>
           )}
@@ -107,27 +118,27 @@ export default function Home() {
       </Section>
       {/* <Section height={SectionHeight.Medium} bgColor="pastel-pink"></Section> */}
       {/* <div className="row center-xs mb-5 p-5">
-        <GridItem Icon={GiCactusPot} title="Date" subtitle="June 9th, 2023">
-          <p className="mb-1">Ceremony at [?]</p>
-          <p className="mb-1">Dinner at [?]</p>
-          <p className="mb-1">Dancing at [?]</p>
-        </GridItem>
-        <GridItem Icon={GiAgave} title="Location" subtitle="Skylight">
-          <p className="mb-1">833 Santa Fe Drive</p>
-          <p className="mb-2">Denver, CO 80204</p>
-          <a
-            rel="noreferrer"
-            href="https://goo.gl/maps/UZDZ9q8YgN343fX77"
-            target="_blank"
-          >
-            <Button>Open in maps</Button>
-          </a>
-        </GridItem>
-        <GridItem Icon={GiCactus} title="Invite" subtitle="Join us">
-          <p className="mb-2">Please RSVP before [?]</p>
-          <Button>RSVP</Button>
-        </GridItem>
-      </div> */}
+      <GridItem Icon={GiCactusPot} title="Date" subtitle="June 9th, 2023">
+        <p className="mb-1">Ceremony at [?]</p>
+        <p className="mb-1">Dinner at [?]</p>
+        <p className="mb-1">Dancing at [?]</p>
+      </GridItem>
+      <GridItem Icon={GiAgave} title="Location" subtitle="Skylight">
+        <p className="mb-1">833 Santa Fe Drive</p>
+        <p className="mb-2">Denver, CO 80204</p>
+        <a
+          rel="noreferrer"
+          href="https://goo.gl/maps/UZDZ9q8YgN343fX77"
+          target="_blank"
+        >
+          <Button>Open in maps</Button>
+        </a>
+      </GridItem>
+      <GridItem Icon={GiCactus} title="Invite" subtitle="Join us">
+        <p className="mb-2">Please RSVP before [?]</p>
+        <Button>RSVP</Button>
+      </GridItem>
+    </div> */}
     </>
   );
 }

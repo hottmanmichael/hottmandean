@@ -1,5 +1,5 @@
 @import "../styles/variables.scss";
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;1,600&family=Montserrat:wght@300,900display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap");
 
 @font-face {
   font-family: "Anaktoria";
@@ -49,15 +49,15 @@ $h6Size: 1.2rem;
 
 /* Typography */
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 b,
 strong {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
 }
 
 h1,
@@ -85,8 +85,8 @@ h3 {
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 600;
 }
 
 h4 {
