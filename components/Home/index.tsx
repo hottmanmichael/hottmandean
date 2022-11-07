@@ -11,6 +11,7 @@ import { Typography } from "../Typography/Typography";
 import HeaderImage from "/public/images/C&M_Engagement_JPEG_1200px_00020.jpg";
 import VerticalKissImage from "/public/images/C&M_Engagement_JPEG_1200px_00017.jpg";
 import LandscapeWalkImage from "/public/images/C&M_Engagement_JPEG_1200px_00011.jpg";
+import { Button, LinkButton } from "../Button";
 
 export default function Home() {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
@@ -118,6 +119,14 @@ export default function Home() {
                   833 Santa Fe Drive
                 </Typography>
                 <Typography tag="p">Denver, CO 80204</Typography>
+                <LinkButton
+                  href="https://www.zola.com/wedding/hottmandeanwedding/rsvp"
+                  className="mt-3"
+                  color="pastel-orange"
+                  target="_blank"
+                >
+                  RSVP
+                </LinkButton>
               </div>
             </div>
           </div>
@@ -142,7 +151,7 @@ export default function Home() {
                 style={{
                   width: "100%",
                   height: "auto",
-                  borderBottomLeftRadius: 10,
+                  borderBottomLeftRadius: 100,
                 }}
               />
             </div>

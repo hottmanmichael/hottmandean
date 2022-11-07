@@ -5,9 +5,17 @@ $color-off-white: #f7f5f0;
 $pastel-pink: #cb8aa9;
 $pastel-green: #a6cbbe;
 $pastel-orange: #d48d65;
-
 $forest-green: #19472c;
 $neutral-green: #a2bdad;
+
+$colors: (
+  color-off-white: $color-off-white,
+  pastel-pink: $pastel-pink,
+  pastel-green: $pastel-green,
+  pastel-orange: $pastel-orange,
+  forest-green: $forest-green,
+  neutral-green: $neutral-green,
+);
 
 $breakpoints: (
   "mini": 320px,

@@ -3,9 +3,14 @@ import localfont from "@next/font/local";
 import cx from "classnames";
 
 const quicksandNormal = Quicksand({
-  weight: "300",
+  preload: true,
+  variable: "--quicksand",
 });
-const anaktoria = localfont({ src: "../../public/fonts/Anaktoria.woff" });
+const anaktoria = localfont({
+  src: "../../public/fonts/Anaktoria.woff",
+  preload: true,
+  variable: "--anaktoria",
+});
 
 type Tag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "b" | "span";
 
@@ -20,11 +25,9 @@ const getFontClassName = (tag: Tag) => {
 };
 
 export const Typography: React.FC<TypographyProps> = ({
-  tag,
+  tag: Tag,
   className,
   children,
 }) => {
-  const Tag = tag;
-
-  return <Tag className={cx(getFontClassName(tag), className)}>{children}</Tag>;
+  return <Tag className={cx(getFontClassName(Tag), className)}>{children}</Tag>;
 };

@@ -1,19 +1,55 @@
+@import "../../styles/variables.scss";
+
 .Button {
   border-radius: 4px;
+  margin: 1rem;
   padding: 0.7rem 1.8rem;
   box-sizing: border-box;
   text-decoration: none;
-  text-transform: uppercase;
   text-align: center;
-  transition: all 0.15s;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 900;
   font-size: 0.9rem;
-  border: none;
-  background-color: #81945f;
-  color: white;
   cursor: pointer;
+  position: relative;
+  z-index: 1;
+  border: none;
+  transition: box-shadow 180ms cubic-bezier(0.2, 0, 0.7, 1);
+
+  // Colors
+  background-color: $forest-green;
+  color: $color-off-white;
+
   &:hover {
-    background-color: rgba(#81945f, 0.8);
+    box-shadow: 0 0 1px 1px rgba($forest-green, 0.4),
+      0 0 1px 4px rgba($forest-green, 0.1), 0 0 1px 8px rgba($forest-green, 0.1);
   }
+
+  @each $colorName, $color in $colors {
+    &__#{$colorName} {
+      background-color: $color;
+      color: $color-off-white;
+      &:hover {
+        box-shadow: 0 0 1px 1px rgba($color, 0.4), 0 0 1px 4px rgba($color, 0.3),
+          0 0 1px 8px rgba($color, 0.1);
+      }
+    }
+  }
+
+  // &__forest-green {
+  //   background-color: $forest-green;
+  //   color: $color-off-white;
+  //   &:hover {
+  //     box-shadow: 0 0 1px 1px rgba($forest-green, 0.4),
+  //       0 0 1px 4px rgba($forest-green, 0.1),
+  //       0 0 1px 8px rgba($forest-green, 0.1);
+  //   }
+  // }
+
+  // &__pastel-pink {
+  //   background-color: $pastel-pink;
+  //   color: black;
+  //   &:hover {
+  //     box-shadow: 0 0 1px 1px rgba($pastel-pink, 0.4),
+  //       0 0 1px 4px rgba($pastel-pink, 0.1), 0 0 1px 8px rgba($pastel-pink, 0.1);
+  //   }
+  // }
 }

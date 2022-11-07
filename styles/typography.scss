@@ -1,9 +1,14 @@
-@import "../styles/variables.scss";
+@import "./variables.scss";
 
-$h0Size: 9rem;
+body {
+  font-family: --quicksand;
+  font-weight: 200;
+}
+
+$h0Size: 9.1rem;
 $h1Size: 4rem;
-$h2Size: 2.2rem;
-$h3Size: 1.5rem;
+$h2Size: 2.6rem;
+$h3Size: 1.6rem;
 
 $h4Size: 2.8rem;
 $h5Size: 1.4rem;
@@ -49,4 +54,7 @@ h6 {
 
 p.small {
   font-size: 0.8rem;
+}
+b {
+  font-weight: 900;
 }
