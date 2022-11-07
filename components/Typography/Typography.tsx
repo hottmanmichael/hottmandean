@@ -26,10 +26,5 @@ export const Typography: React.FC<TypographyProps> = ({
 }) => {
   const Tag = tag;
 
-  console.log({
-    tag,
-    cx: getFontClassName(tag),
-  });
-
   return <Tag className={cx(getFontClassName(tag), className)}>{children}</Tag>;
 };

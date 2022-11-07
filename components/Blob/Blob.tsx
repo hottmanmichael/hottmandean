@@ -1,35 +1,46 @@
 import { useMemo } from "react";
+import { StaticImageData } from "next/image";
 import Image from "next/legacy/image";
 import styles from "./Blob.module.scss";
 
-type BlobColor =
+import GreenBlob from "/public/images/illustrations/blob1.png";
+import PurpleBlob from "/public/images/illustrations/blob-purple.png";
+import PinkBlob from "/public/images/illustrations/blob-pink.png";
+import OrangeBlob from "/public/images/illustrations/blob-orange.png";
+import MultiPinkBlob from "/public/images/illustrations/blob-multi-pink.png";
+import CactusLarge from "/public/images/illustrations/cactus1.png";
+import CactusMedium from "/public/images/illustrations/cactus2.png";
+import CactusSmall from "/public/images/illustrations/cactus3.png";
+
+type ImageType =
   | "green"
   | "purple"
   | "pink"
   | "orange"
   | "multi-pink"
-  | "cactus1"
-  | "cactus2"
-  | "cactus3";
+  | "cactus-lg"
+  | "cactus-md"
+  | "cactus-sm";
 
-const ColorToPngMap: Record<BlobColor, string> = {
-  green: require("../../public/images/illustrations/blob1.png"),
-  purple: require("../../public/images/illustrations/blob-purple.png"),
-  pink: require("../../public/images/illustrations/blob-pink.png"),
-  orange: require("../../public/images/illustrations/blob-orange.png"),
-  "multi-pink": require("../../public/images/illustrations/blob-multi-pink.png"),
-  cactus1: require("../../public/images/illustrations/cactus1.png"),
-  cactus2: require("../../public/images/illustrations/cactus2.png"),
-  cactus3: require("../../public/images/illustrations/cactus3.png"),
+const ImageTypeToPngMap: Record<ImageType, StaticImageData> = {
+  green: GreenBlob,
+  purple: PurpleBlob,
+  pink: PinkBlob,
+  orange: OrangeBlob,
+  "multi-pink": MultiPinkBlob,
+  "cactus-lg": CactusLarge,
+  "cactus-md": CactusMedium,
+  "cactus-sm": CactusSmall,
 };
 
 interface BlobProps {
+  type: ImageType;
+
   top?: number;
   right?: number;
   bottom?: number;
   left?: number;
   rotation?: number;
-  color?: BlobColor;
   size?: number;
   opacity?: number;
 }
@@ -40,7 +51,7 @@ export const Blob: React.FC<BlobProps> = ({
   bottom = 0,
   left = 0,
   rotation = 0,
-  color = "green",
+  type = "green",
   size = 600,
   opacity = 0.4,
 }) => {
@@ -74,7 +85,7 @@ export const Blob: React.FC<BlobProps> = ({
         width={size}
         objectPosition="center"
         className={styles.BackgroundImage}
-        src={ColorToPngMap[color]}
+        src={ImageTypeToPngMap[type]}
       />
     </div>
   );

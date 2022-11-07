@@ -8,6 +8,10 @@ import { Blob } from "../Blob";
 import styles from "./index.module.scss";
 import { Typography } from "../Typography/Typography";
 
+import HeaderImage from "/public/images/C&M_Engagement_JPEG_1200px_00020.jpg";
+import VerticalKissImage from "/public/images/C&M_Engagement_JPEG_1200px_00017.jpg";
+import LandscapeWalkImage from "/public/images/C&M_Engagement_JPEG_1200px_00011.jpg";
+
 export default function Home() {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
   const isMediumScreen = useMediaQuery("(max-width: 1023px)");
@@ -25,7 +29,6 @@ export default function Home() {
           name="description"
           content="The wedding of Claire Dean and Michael Hottman"
         />
-        {/* <link rel="icon" href="/favicon.ico" /> */}
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -52,7 +55,7 @@ export default function Home() {
           priority
           placeholder="blur"
           className={styles.BackgroundImage}
-          src={require("../../public/images/C&M_Engagement_JPEG_1200px_00020.jpg")}
+          src={HeaderImage}
           fill
           sizes="100vw"
           style={{
@@ -86,16 +89,16 @@ export default function Home() {
           </Typography>
         </div>
         <Blob
-          color="green"
+          type="green"
           left={-256}
           opacity={0.35}
           top={10}
           rotation={-58}
           size={1200}
         />
-        <Blob color="cactus1" bottom={-12} left={-90} opacity={1} size={300} />
-        <Blob color="cactus3" bottom={-10} left={105} opacity={1} size={85} />
-        <Blob color="cactus2" bottom={-20} left={180} opacity={1} size={200} />
+        <Blob type="cactus-lg" bottom={-12} left={-90} opacity={1} size={300} />
+        <Blob type="cactus-sm" bottom={-10} left={105} opacity={1} size={85} />
+        <Blob type="cactus-md" bottom={-20} left={180} opacity={1} size={200} />
       </Section>
       <Section className="pt-0" bgColor="off-white">
         <div className="row middle-xs">
@@ -121,7 +124,7 @@ export default function Home() {
           {isMediumScreen ? (
             <div className="col-md-0 col-xs-12 p-0">
               <Image
-                src={require("../../public/images/C&M_Engagement_JPEG_1200px_00017.jpg")}
+                src={VerticalKissImage}
                 alt="image"
                 sizes="100vw"
                 style={{
@@ -133,7 +136,7 @@ export default function Home() {
           ) : (
             <div className="col-md col-xs-0 p-0">
               <Image
-                src={require("../../public/images/C&M_Engagement_JPEG_1200px_00011.jpg")}
+                src={LandscapeWalkImage}
                 alt="image"
                 sizes="100vw"
                 style={{
