@@ -8,9 +8,11 @@ import PurpleBlob from "/public/images/illustrations/blob-purple.png";
 import PinkBlob from "/public/images/illustrations/blob-pink.png";
 import OrangeBlob from "/public/images/illustrations/blob-orange.png";
 import MultiPinkBlob from "/public/images/illustrations/blob-multi-pink.png";
-import CactusLarge from "/public/images/illustrations/cactus1.png";
-import CactusMedium from "/public/images/illustrations/cactus2.png";
-import CactusSmall from "/public/images/illustrations/cactus3.png";
+import Cactus1 from "/public/images/illustrations/cactus1.png";
+import Cactus2 from "/public/images/illustrations/cactus2.png";
+import Cactus3 from "/public/images/illustrations/cactus3.png";
+import Cactus4 from "/public/images/illustrations/cactus4.png";
+import Cactus5 from "/public/images/illustrations/cactus5.png";
 
 type ImageType =
   | "green"
@@ -18,9 +20,11 @@ type ImageType =
   | "pink"
   | "orange"
   | "multi-pink"
-  | "cactus-lg"
-  | "cactus-md"
-  | "cactus-sm";
+  | "cactus1"
+  | "cactus2"
+  | "cactus3"
+  | "cactus4"
+  | "cactus5";
 
 const ImageTypeToPngMap: Record<ImageType, StaticImageData> = {
   green: GreenBlob,
@@ -28,9 +32,11 @@ const ImageTypeToPngMap: Record<ImageType, StaticImageData> = {
   pink: PinkBlob,
   orange: OrangeBlob,
   "multi-pink": MultiPinkBlob,
-  "cactus-lg": CactusLarge,
-  "cactus-md": CactusMedium,
-  "cactus-sm": CactusSmall,
+  cactus1: Cactus1,
+  cactus2: Cactus2,
+  cactus3: Cactus3,
+  cactus4: Cactus4,
+  cactus5: Cactus5,
 };
 
 interface BlobProps {
@@ -41,7 +47,7 @@ interface BlobProps {
   bottom?: number;
   left?: number;
   rotation?: number;
-  size?: number;
+  size?: number | { height: number; width: number };
   opacity?: number;
 }
 
@@ -71,6 +77,9 @@ export const Blob: React.FC<BlobProps> = ({
     };
   }, [top, right, bottom, left, opacity]);
 
+  const height = typeof size === "number" ? size : size.height;
+  const width = typeof size === "number" ? size : size.width;
+
   return (
     <div
       className={styles.Blob}
@@ -81,8 +90,8 @@ export const Blob: React.FC<BlobProps> = ({
     >
       <Image
         alt="background"
-        height={size}
-        width={size}
+        height={height}
+        width={width}
         objectPosition="center"
         className={styles.BackgroundImage}
         src={ImageTypeToPngMap[type]}
