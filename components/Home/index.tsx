@@ -52,7 +52,7 @@ export default function Home() {
           priority
           placeholder="blur"
           className={styles.BackgroundImage}
-          src={require("../images/C&M_Engagement_JPEG_1200px_00020.jpg")}
+          src={require("../../public/images/C&M_Engagement_JPEG_1200px_00020.jpg")}
           fill
           sizes="100vw"
           style={{
@@ -121,7 +121,7 @@ export default function Home() {
           {isMediumScreen ? (
             <div className="col-md-0 col-xs-12 p-0">
               <Image
-                src={require("../images/C&M_Engagement_JPEG_1200px_00017.jpg")}
+                src={require("../../public/images/C&M_Engagement_JPEG_1200px_00017.jpg")}
                 alt="image"
                 sizes="100vw"
                 style={{
@@ -133,7 +133,7 @@ export default function Home() {
           ) : (
             <div className="col-md col-xs-0 p-0">
               <Image
-                src={require("../images/C&M_Engagement_JPEG_1200px_00011.jpg")}
+                src={require("../../public/images/C&M_Engagement_JPEG_1200px_00011.jpg")}
                 alt="image"
                 sizes="100vw"
                 style={{

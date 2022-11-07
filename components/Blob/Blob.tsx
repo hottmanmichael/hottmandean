@@ -13,14 +13,14 @@ type BlobColor =
   | "cactus3";
 
 const ColorToPngMap: Record<BlobColor, string> = {
-  green: require("../images/illustrations/blob1.png"),
-  purple: require("../images/illustrations/blob-purple.png"),
-  pink: require("../images/illustrations/blob-pink.png"),
-  orange: require("../images/illustrations/blob-orange.png"),
-  "multi-pink": require("../images/illustrations/blob-multi-pink.png"),
-  cactus1: require("../images/illustrations/cactus1.png"),
-  cactus2: require("../images/illustrations/cactus2.png"),
-  cactus3: require("../images/illustrations/cactus3.png"),
+  green: require("../../public/images/illustrations/blob1.png"),
+  purple: require("../../public/images/illustrations/blob-purple.png"),
+  pink: require("../../public/images/illustrations/blob-pink.png"),
+  orange: require("../../public/images/illustrations/blob-orange.png"),
+  "multi-pink": require("../../public/images/illustrations/blob-multi-pink.png"),
+  cactus1: require("../../public/images/illustrations/cactus1.png"),
+  cactus2: require("../../public/images/illustrations/cactus2.png"),
+  cactus3: require("../../public/images/illustrations/cactus3.png"),
 };
 
 interface BlobProps {
