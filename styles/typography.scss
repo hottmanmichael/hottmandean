@@ -1,26 +1,5 @@
 @import "../styles/variables.scss";
 
-@font-face {
-  font-family: "Anaktoria";
-  src: url("../public/fonts/Anaktoria.woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Anaktoria";
-  src: url("../public/fonts/Anaktoria.woff");
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Anaktoria";
-  src: url("../public/fonts/Anaktoria.woff");
-  font-weight: normal;
-  font-style: italic;
-}
-
 $h0Size: 9rem;
 $h1Size: 4rem;
 $h2Size: 2.2rem;
@@ -47,24 +26,24 @@ $h6Size: 1.2rem;
 }
 
 /* Typography */
-body {
-  font-family: Quicksand, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-}
+// body {
+//   font-family: Quicksand, sans-serif;
+//   font-size: 16px;
+//   font-weight: 400;
+// }
 
-b,
-strong {
-  font-family: Quicksand, sans-serif;
-  font-weight: 600;
-}
+// b,
+// strong {
+//   font-family: Quicksand, sans-serif;
+//   font-weight: 600;
+// }
 
-h1,
-h2,
-h3 {
-  font-family: "Anaktoria", serif;
-  font-weight: 500;
-}
+// h1,
+// h2,
+// h3 {
+//   font-family: "Anaktoria", serif;
+//   font-weight: 500;
+// }
 
 h1 {
   @include resizeFont($h1Size);
@@ -81,12 +60,12 @@ h3 {
   @include resizeFont($h3Size);
 }
 
-h4,
-h5,
-h6 {
-  font-family: "Quicksand", sans-serif;
-  font-weight: 600;
-}
+// h4,
+// h5,
+// h6 {
+//   font-family: "Quicksand", sans-serif;
+//   font-weight: 600;
+// }
 
 h4 {
   @include resizeFont($h4Size);

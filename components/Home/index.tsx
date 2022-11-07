@@ -6,6 +6,7 @@ import { Section, SectionHeight } from "../Section";
 import { Blob } from "../Blob";
 
 import styles from "./index.module.scss";
+import { Typography } from "../Typography/Typography";
 
 export default function Home() {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
@@ -24,7 +25,25 @@ export default function Home() {
           name="description"
           content="The wedding of Claire Dean and Michael Hottman"
         />
-        <link rel="icon" href="/favicon.ico" />
+        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/favicon/apple-touch-icon.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon/favicon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="16x16"
+          href="/favicon/favicon-16x16.png"
+        />
+        <link rel="manifest" href="/favicon/site.webmanifest"></link>
       </Head>
 
       <div className={cx(styles.BackgroundImageWrapper)}>
@@ -44,17 +63,19 @@ export default function Home() {
       </div>
       <div className={headerWrapperClassName}>
         <div className={headingClassName}>
-          <h1 className={cx(styles.HeadingText, "extra")}>Claire & Michael</h1>
+          <Typography tag="h1" className={cx(styles.HeadingText, "extra")}>
+            Claire & Michael
+          </Typography>
         </div>
       </div>
       <Section height={SectionHeight.Medium}>
         <div style={{ height: "100%" }} className="col-xs row center-xs">
-          <h2 className="col-xs-12 center-xs py-4">
+          <Typography tag="h2" className="col-xs-12 center-xs py-2">
             {isSmallScreen ? (
-              <>
+              <div className="row">
                 <span className="col-xs-12 mb-3">June 9th, 2023</span>
                 <span className="col-xs-12">Denver, Colorado</span>
-              </>
+              </div>
             ) : (
               <>
                 <span>June 9th, 2023</span>
@@ -62,7 +83,7 @@ export default function Home() {
                 <span>Denver, Colorado</span>
               </>
             )}
-          </h2>
+          </Typography>
         </div>
         <Blob
           color="green"
@@ -81,11 +102,19 @@ export default function Home() {
           <div className="col-md-8 col-xs-12 pl-0 py-5">
             <div className="row center-xs middle-xs p-3">
               <div className="col-xs-12">
-                <h1 className="mb-5">The Celebration</h1>
-                <h2 className="mb-1 mt-2d">Skylight</h2>
-                <h3 className="col-xs-12 mb-3">June 9th, 2023 at 6pm</h3>
-                <p className="mb-1">833 Santa Fe Drive</p>
-                <p>Denver, CO 80204</p>
+                <Typography tag="h1" className="mb-5">
+                  The Celebration
+                </Typography>
+                <Typography tag="h2" className="mb-1 mt-2d">
+                  Skylight
+                </Typography>
+                <Typography tag="h3" className="col-xs-12 mb-3">
+                  June 9th, 2023 at 6pm
+                </Typography>
+                <Typography tag="p" className="mb-1">
+                  833 Santa Fe Drive
+                </Typography>
+                <Typography tag="p">Denver, CO 80204</Typography>
               </div>
             </div>
           </div>
