@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import styles from "./Blob.module.scss";
 
 type BlobColor =

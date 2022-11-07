@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import cx from "classnames";
 import { useMediaQuery } from "../../hooks";
 import { Section, SectionHeight } from "../Section";
@@ -49,8 +49,8 @@ export default function Home() {
           <h2 className="col-xs-12 center-xs py-4">
             {isSmallScreen ? (
               <>
-                <div className="col-xs-12 mb-3">June 9th, 2023</div>
-                <div className="col-xs-12">Denver, Colorado</div>
+                <span className="col-xs-12 mb-3">June 9th, 2023</span>
+                <span className="col-xs-12">Denver, Colorado</span>
               </>
             ) : (
               <>
@@ -95,7 +95,7 @@ export default function Home() {
               />
             </div>
           ) : (
-            <div className="col-md col-xs-0 p-1">
+            <div className="col-md col-xs-0 p-0">
               <Image
                 src={require("../images/C&M_Engagement_JPEG_1200px_00011.jpg")}
                 alt="image"

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import cx from "classnames";
 import styles from "./Section.module.scss";
 
