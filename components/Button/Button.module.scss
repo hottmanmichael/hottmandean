@@ -7,7 +7,7 @@
   box-sizing: border-box;
   text-decoration: none;
   text-align: center;
-  font-size: 0.9rem;
+  font-size: 1rem;
   cursor: pointer;
   position: relative;
   z-index: 1;
@@ -28,28 +28,9 @@
       background-color: $color;
       color: $color-off-white;
       &:hover {
-        box-shadow: 0 0 1px 1px rgba($color, 0.4), 0 0 1px 4px rgba($color, 0.3),
-          0 0 1px 8px rgba($color, 0.1);
+        box-shadow: 0 0 1px 3px rgba($color, 0.2), 0 0 1px 8px rgba($color, 0.1),
+          0 0 1px 13px rgba($color, 0.05);
       }
     }
   }
-
-  // &__forest-green {
-  //   background-color: $forest-green;
-  //   color: $color-off-white;
-  //   &:hover {
-  //     box-shadow: 0 0 1px 1px rgba($forest-green, 0.4),
-  //       0 0 1px 4px rgba($forest-green, 0.1),
-  //       0 0 1px 8px rgba($forest-green, 0.1);
-  //   }
-  // }
-
-  // &__pastel-pink {
-  //   background-color: $pastel-pink;
-  //   color: black;
-  //   &:hover {
-  //     box-shadow: 0 0 1px 1px rgba($pastel-pink, 0.4),
-  //       0 0 1px 4px rgba($pastel-pink, 0.1), 0 0 1px 8px rgba($pastel-pink, 0.1);
-  //   }
-  // }
 }
