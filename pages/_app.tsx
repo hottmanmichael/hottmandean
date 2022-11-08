@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import Layout from "../components/Layout";
 import "flexboxgrid/dist/flexboxgrid.min.css";
 import "../styles/reset.css";
@@ -9,6 +10,7 @@ import "../styles/typography.scss";
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
+      <Analytics />
       <Component {...pageProps} />
     </Layout>
   );
