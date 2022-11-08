@@ -19,11 +19,13 @@ interface SectionProps {
   height?: SectionHeight;
   bgColor?: BackgroundColor;
   className?: string;
+  overflow?: "hidden" | "visible";
 }
 
 export const Section: React.FC<SectionProps> = ({
-  height,
+  height = undefined,
   bgColor = "transparent",
+  overflow,
   className,
   children,
 }) => {
@@ -34,6 +36,7 @@ export const Section: React.FC<SectionProps> = ({
     <div
       style={{
         height,
+        overflow,
       }}
       className={mergedClassName}
     >

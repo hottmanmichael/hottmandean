@@ -3,6 +3,7 @@
 body {
   font-family: --quicksand;
   font-weight: 200;
+  line-height: 1.72rem;
 }
 
 $h0Size: 9.1rem;
@@ -34,6 +35,7 @@ h1 {
   @include resizeFont($h1Size);
   &.extra {
     @include resizeFont($h0Size);
+    line-height: initial;
   }
 }
 h2 {

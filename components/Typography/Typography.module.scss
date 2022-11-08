@@ -1,0 +1,21 @@
+.Typography {
+  &__Bold {
+    font-weight: bold;
+  }
+
+  &__Weight--100 {
+    font-weight: 100;
+  }
+  &__Weight--300 {
+    font-weight: 300;
+  }
+  &__Weight--500 {
+    font-weight: 500;
+  }
+  &__Weight--700 {
+    font-weight: 700;
+  }
+  &__Weight--900 {
+    font-weight: 900;
+  }
+}

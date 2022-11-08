@@ -14,10 +14,11 @@ $screen-height: calc(100vh - env(safe-area-inset-bottom));
 
   .Heading {
     text-align: center;
+    margin-bottom: 0;
   }
 
   .HeadingCenter {
-    margin-bottom: max(2rem, env(safe-area-inset-bottom));
+    margin-bottom: max(3.3rem, env(safe-area-inset-bottom));
     word-spacing: 9999999px;
   }
 }

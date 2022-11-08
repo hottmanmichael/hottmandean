@@ -5,16 +5,15 @@
   width: 100%;
   position: relative;
   background-color: transparent;
-  overflow: hidden;
 
   &.Background_pastel-green {
-    background-color: $pastel-green;
+    background-color: lighten($pastel-green, 12);
   }
   &.Background_pastel-pink {
-    background-color: $pastel-pink;
+    background-color: lighten($pastel-pink, 12);
   }
   &.Background_pastel-orange {
-    background-color: $pastel-orange;
+    background-color: lighten($pastel-orange, 12);
   }
   &.Background_off-white {
     background-color: $color-off-white;
