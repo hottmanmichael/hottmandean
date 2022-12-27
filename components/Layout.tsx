@@ -11,7 +11,7 @@ function Footer() {
   return (
     <footer className={styles.Footer}>
       <p className="mb-1">
-        Thanks to{" "}
+        Special thanks to{" "}
         <a
           rel="noreferrer"
           target="_blank"
@@ -20,7 +20,7 @@ function Footer() {
           Rob Knight Photography
         </a>
       </p>
-      <p className="mb-1">© 2022, Michael Hottman & Claire Dean</p>
+      <p className="mb-1">© 2023 | Michael Hottman & Claire Dean</p>
     </footer>
   );
 }

@@ -12,7 +12,7 @@ export const AgendaItem: React.FC<AgendaItemProps> = ({
   date,
 }) => {
   return (
-    <div className="mb-4">
+    <div className="mb-5">
       <Typography tag="h6" className="mb-1">
         {date}
       </Typography>

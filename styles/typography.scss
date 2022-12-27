@@ -3,7 +3,8 @@
 body {
   font-family: --quicksand;
   font-weight: 200;
-  line-height: 1.72rem;
+  line-height: 1.82rem;
+  font-size: 18px;
 }
 
 $h0Size: 9.1rem;
@@ -13,7 +14,7 @@ $h3Size: 1.6rem;
 
 $h4Size: 2.8rem;
 $h5Size: 1.4rem;
-$h6Size: 1.2rem;
+$h6Size: 1.3rem;
 
 @mixin resizeFont($base) {
   font-size: calc($base * 0.65);
@@ -33,6 +34,8 @@ $h6Size: 1.2rem;
 
 h1 {
   @include resizeFont($h1Size);
+  line-height: 2.6rem;
+
   &.extra {
     @include resizeFont($h0Size);
     line-height: initial;
@@ -40,6 +43,7 @@ h1 {
 }
 h2 {
   @include resizeFont($h2Size);
+  line-height: 2.3rem;
 }
 h3 {
   @include resizeFont($h3Size);
@@ -51,7 +55,7 @@ h5 {
   @include resizeFont($h5Size);
 }
 h6 {
-  font-size: $h6Size;
+  @include resizeFont($h6Size);
 }
 
 p.small {
