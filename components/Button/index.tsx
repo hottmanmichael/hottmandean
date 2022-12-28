@@ -49,7 +49,7 @@ export function Button({
       )}
       onClick={onClick}
     >
-      <Typography tag="b">{children}</Typography>
+      <Typography tag="p">{children}</Typography>
     </button>
   );
 }

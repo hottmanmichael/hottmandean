@@ -62,6 +62,10 @@ $screen-height: calc(100vh - env(safe-area-inset-bottom));
   text-align: center;
 }
 
+.PrimaryEventDetailsContainer {
+  padding: 10rem 2rem;
+}
+
 .Spacer {
   display: flex;
   flex-direction: column;

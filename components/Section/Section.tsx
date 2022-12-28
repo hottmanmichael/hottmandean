@@ -20,22 +20,31 @@ interface SectionProps {
   bgColor?: BackgroundColor;
   className?: string;
   overflow?: "hidden" | "visible";
+  includePadding?: true;
 }
 
 export const Section: React.FC<SectionProps> = ({
   height = undefined,
   bgColor = "transparent",
   overflow,
+  includePadding,
   className,
   children,
 }) => {
   const colorClassName = `Background_${bgColor}`;
-  const mergedClassName = cx(styles.Section, styles[colorClassName], className);
+  const mergedClassName = cx(
+    styles.Section,
+    styles[colorClassName],
+    className,
+    {
+      [styles.IncludePadding]: includePadding,
+    }
+  );
 
   return (
     <div
       style={{
-        height,
+        minHeight: height,
         overflow,
       }}
       className={mergedClassName}

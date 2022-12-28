@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import { StaticImageData } from "next/image";
 import Image from "next/image";
 import styles from "./Blob.module.scss";
+import cx from "classnames";
 
 import GreenBlob from "/public/images/illustrations/blob1.png";
 import PurpleBlob from "/public/images/illustrations/blob-purple.png";
@@ -54,6 +55,8 @@ const ImageTypeToPngMap: Record<ImageType, StaticImageData> = {
 interface BlobProps {
   type: ImageType;
 
+  className?: string;
+
   top?: number;
   right?: number;
   bottom?: number;
@@ -64,6 +67,7 @@ interface BlobProps {
 }
 
 export const Blob: React.FC<BlobProps> = ({
+  className,
   top = 0,
   right = 0,
   bottom = 0,
@@ -94,7 +98,7 @@ export const Blob: React.FC<BlobProps> = ({
 
   return (
     <div
-      className={styles.Blob}
+      className={cx(styles.Blob, className)}
       style={{
         transform: `rotate(${rotation}deg)`,
         ...style,

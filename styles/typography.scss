@@ -13,7 +13,7 @@ $h2Size: 2.6rem;
 $h3Size: 1.6rem;
 
 $h4Size: 2.8rem;
-$h5Size: 1.4rem;
+$h5Size: 1.7rem;
 $h6Size: 1.3rem;
 
 @mixin resizeFont($base) {
@@ -55,7 +55,7 @@ h5 {
   @include resizeFont($h5Size);
 }
 h6 {
-  @include resizeFont($h6Size);
+  font-size: $h6Size;
 }
 
 p.small {

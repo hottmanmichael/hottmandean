@@ -9,8 +9,8 @@ import styles from "./index.module.scss";
 import { Typography } from "../Typography/Typography";
 
 import HeaderImage from "/public/images/C&M_Engagement_JPEG_1200px_00020.jpg";
-import VerticalKissImage from "/public/images/C&M_Engagement_JPEG_1200px_00017.jpg";
-import LandscapeWalkImage from "/public/images/C&M_Engagement_JPEG_1200px_00011.jpg";
+import LandscapeWalkImage from "/public/images/C&M_Engagement_JPEG_1200px_00017.jpg";
+import VerticalKissImage from "/public/images/C&M_Engagement_JPEG_1200px_00011.jpg";
 import ArtHotelImage from "/public/images/art-hotel.jpeg";
 import CurtisHotelImage from "/public/images/curtis-hotel.jpeg";
 import { Button, LinkButton } from "../Button";
@@ -75,7 +75,7 @@ export default function Home() {
           </Typography>
         </div>
       </div>
-      <Section height={SectionHeight.Medium} className="pb-5">
+      <Section height={SectionHeight.Medium} className="pb-5" overflow="hidden">
         <div style={{ height: "100%" }} className="col-xs row center-xs pb-5">
           <Typography tag="h2" className="col-xs-12 center-xs py-2">
             {isSmallScreen ? (
@@ -97,14 +97,14 @@ export default function Home() {
           left={-256}
           opacity={0.35}
           top={10}
-          rotation={-58}
-          size={800}
+          rotation={-48}
+          size={900}
         />
         <Blob
           type="cactus1"
           bottom={-20}
           left={isSmallScreen ? -80 : -90}
-          size={isSmallScreen ? 250 : 320}
+          size={isSmallScreen ? 250 : 310}
         />
         <Blob
           type="cactus3"
@@ -115,15 +115,18 @@ export default function Home() {
         <Blob
           type="cactus2"
           bottom={-20}
-          left={190}
+          left={180}
           size={isSmallScreen ? 180 : 200}
         />
         <div className="mb-5" />
       </Section>
-      <Section className="pt-0 pb-3" bgColor="off-white">
+      <Section
+        className={cx(styles.PrimaryEventDetailsContainer)}
+        bgColor="transparent"
+      >
         <div className="row middle-xs">
-          <div className="col-md-8 col-xs-12 pl-0 py-3">
-            <div className="row center-xs middle-xs p-3">
+          <div className="col-xs-12 pl-0 py-3">
+            <div className="row center-xs middle-xs">
               <div className="col-xs-12">
                 <Typography tag="h1" className="mb-5">
                   The Main Event
@@ -142,53 +145,26 @@ export default function Home() {
                   color="pastel-orange"
                   target="_blank"
                 >
-                  RSVP
+                  RSVP Now
                 </LinkButton>
-                {/*
-                 *
-                 * A Weather Widget would be cool!
-                 */}
               </div>
             </div>
           </div>
-          {isMediumScreen ? (
-            <div className="col-md-0 col-xs-12 p-0">
-              <Image
-                src={VerticalKissImage}
-                alt="image"
-                sizes="100vw"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                }}
-              />
-            </div>
-          ) : (
-            <div className="col-md col-xs-0 p-0">
-              <Image
-                src={LandscapeWalkImage}
-                alt="image"
-                sizes="100vw"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  borderBottomLeftRadius: 300,
-                }}
-              />
-            </div>
-          )}
         </div>
+        <Blob
+          type="multi-pink"
+          right={isSmallScreen ? -500 : -850}
+          opacity={0.35}
+          bottom={-100}
+          rotation={110}
+          size={isSmallScreen ? 700 : 1200}
+        />
       </Section>
-      <Section className="row center-xs middle-xs pb-5">
-        <div className="col-xs-12 mt-5 mb-5">
+      <Section className="row center-xs middle-xs" includePadding>
+        <div className="col-xs-12 mt-5 mb-5 pb-5">
           <Typography tag="h1" className="mb-5">
             Schedule
           </Typography>
-          {/* <AgendaItem
-            name="Rehearsal Dinner"
-            location="El Jefe"
-            date="June 8th, 2023"
-          /> */}
           <AgendaItem
             name="Ceremony"
             location="Skylight | Indoors"
@@ -212,87 +188,74 @@ export default function Home() {
         </div>
         <Blob
           type="blue"
-          left={-350}
-          opacity={isMediumScreen ? 0 : 0.3}
-          top={-350}
+          left={isMediumScreen ? -200 : -350}
+          opacity={isMediumScreen ? 0.3 : 0.3}
+          top={-150}
           rotation={283}
-          size={900}
+          size={isMediumScreen ? 600 : 900}
         />
         <Blob
           type="purple"
-          right={-650}
+          right={-750}
           opacity={0.3}
-          top={370}
-          rotation={0}
-          size={1400}
+          top={270}
+          rotation={-180}
+          size={1300}
         />
-        <Blob type="cactus5" bottom={-22} right={-1} size={90} />
-
-        <Blob
-          type="cactus7"
-          bottom={-20}
-          right={30}
-          rotation={-2}
-          opacity={1}
-          size={100}
-        />
-        <Blob type="cactus3" bottom={-12} right={90} size={60} />
-        <Blob type="cactus6" bottom={-12} right={86} size={21} rotation={3} />
-        <Blob type="cactus6" bottom={-12} right={143} size={26} rotation={-8} />
-        <Blob type="cactus4" bottom={-12} right={160} size={16} rotation={-5} />
-        <Blob
-          type="cactus3"
-          bottom={-12}
-          right={121}
-          size={21}
-          rotation={-10}
-        />
+        <Blob type="cactus5" bottom={-22} right={-1} size={120} />
+        <Blob type="cactus7" bottom={-40} right={60} opacity={1} size={130} />
+        <Blob type="cactus6" bottom={-12} right={160} size={40} rotation={-3} />
       </Section>
-      <Section bgColor="pastel-green" className="row center-xs pb-0">
-        <div className="col-xs-12 mt-2 py-5 px-2">
+      <Section
+        bgColor="pastel-green"
+        className="row center-xs pb-0"
+        includePadding
+      >
+        <div className="col-xs-12 my-5 px-2">
           <Typography tag="h1" className="mb-5">
             Accommodation
           </Typography>
           <div className="row center-xs">
-            <div className="col-xs-12 col-sm-8 col-md-6">
-              <Typography tag="h6" className="mb-3">
+            <div className="col-xs-12 col-sm-10 col-md-5">
+              <Typography tag="h6" className="mb-4">
                 While we did not reserve a discounted group rate, there are a
-                plethora of hotels in within a mile or two of the venue. Below
-                are links to hotels that we recommend due to price, style, and
-                proximity. If you prefer to stay in a vacation rental, we would
-                be happy to recommend neighborhoods in Denver that would suit
-                your interests.
+                plethora hotels within a mile or two of the venue - we&apos;ve
+                included a few recommendations below.
               </Typography>
-              <Typography tag="h6" bold className="mb-3">
-                Special note: There is a convention taking place during the
-                weekend of June 9th in Denver. If you plan on attending the
-                wedding and would like to stay near the venue, we recommend
-                booking as soon as possible.
+              <Typography tag="p" bold className="mb-1">
+                Special Note
+              </Typography>
+              <Typography tag="h6" className="mb-5">
+                There is a convention taking place during the weekend of June
+                9th in Denver. If you plan on attending the wedding and would
+                like to stay near the venue, we recommend booking as soon as
+                possible.
               </Typography>
             </div>
           </div>
         </div>
-        <div className="col-md-6 col-xs-12 center-xs mb-5">
-          <Typography tag="h1" className="mb-2">
+        <div className="col-md-6 col-xs-12 center-xs">
+          <Typography tag="h1" className="mb-3">
             The ART Hotel
           </Typography>
-          <Typography tag="h6" className="mb-2">
+          <Typography tag="h6" className="mb-3">
             Starting at $286/night
           </Typography>
           <Image
             src={ArtHotelImage}
+            className="mb-1"
             alt="image"
             sizes="100vw"
             style={{
-              height: "auto",
-              width: 400,
+              height: 218,
+              width: "auto",
               objectFit: "cover",
               objectPosition: "center",
-              borderRadius: 400,
+              borderRadius: 5,
             }}
           />
           <Typography tag="h5" bold className="mt-2 mb-1">
-            3 min drive | 21 min walk
+            3 minute drive
           </Typography>
           <div className="row center-xs">
             <div className="col-md-8 col-sm-10 col-xs-12">
@@ -313,28 +276,28 @@ export default function Home() {
             Directions
           </LinkButton>
         </div>
-
         <div className="col-md-6 col-xs-12 center-xs">
-          <Typography tag="h1" className="mb-2">
+          <Typography tag="h1" className="mb-3">
             The Curtis
           </Typography>
-          <Typography tag="h6" className="mb-2">
+          <Typography tag="h6" className="mb-3">
             Starting at $206/night
           </Typography>
           <Image
             src={CurtisHotelImage}
+            className="mb-1"
             alt="image"
             sizes="100vw"
             style={{
-              height: "auto",
-              width: 400,
+              height: 218,
+              width: "auto",
               objectFit: "cover",
               objectPosition: "center",
-              borderRadius: 400,
+              borderRadius: 5,
             }}
           />
           <Typography tag="h5" bold className="mt-2 mb-1">
-            7 min drive | 30 min walk
+            7 minute drive
           </Typography>
           <div className="row center-xs">
             <div className="col-md-8 col-sm-10 col-xs-12">
@@ -352,56 +315,63 @@ export default function Home() {
             Directions
           </LinkButton>
         </div>
+        <div className="row center-xs middle-xs py-5 mt-5 mb-5">
+          <div className="col-xs-12 col-sm-10 col-md-7">
+            <Typography tag="h6">
+              If you prefer to stay in a vacation rental, give us a shout! We
+              would be happy to recommend neighborhoods in Denver that might
+              suit your interests.
+            </Typography>
+          </div>
+        </div>
       </Section>
-      <Section bgColor="pastel-green" className="row center-xs pb-5">
+      <Section bgColor="off-white" className="row center-xs" includePadding>
         <div className="col-xs-12 mt-2 py-5 px-2">
           <Typography tag="h1" className="mb-5">
             Transportation
           </Typography>
           <div className="row center-xs">
-            <div className="col-xs-12 col-sm-8 col-md-6">
-              <Typography tag="h6" className="mb-3">
-                We will not be providing group transportation - if you plan on
-                driving, there will be a private, free-of-charge parking lot
-                available next door to the venue for up to 50 cars in addition
-                to free street parking surrounding the venue.
+            <div className="col-xs-12 col-sm-8 col-md-5">
+              <Typography tag="h6" className="mb-4">
+                If you plan on driving, there is be a private, free-of-charge
+                parking lot available next door for up to 50 cars as well as
+                free street parking surrounding the venue.
               </Typography>
-              <Typography bold tag="h6" className="mb-3">
-                If you plan on drinking any amount, we strongly encourage
-                finding transportation via Lyft, Uber, taxi, or carpooling with
-                a sober driver.
+              <Typography tag="h6" className="mb-3">
+                Otherwise we strongly encourage finding transportation via Lyft,
+                Uber, taxi, or carpooling with a sober driver.
               </Typography>
             </div>
           </div>
         </div>
       </Section>
       {/* Registry */}
-      <Section bgColor="off-white">
+      <Section bgColor="pastel-pink" overflow="hidden">
         <div className="row middle-xs p-0">
-          <div className="col-md-4 col-xs-12 p-0">
+          <div className="col-md-4 col-xs-12">
             {!isMediumScreen && (
               <Image
                 src={require("../../public/images/C&M_Engagement_JPEG_1200px_00019.jpg")}
                 placeholder="blur"
                 alt="image"
-                sizes="100vw"
+                sizes="110vw"
                 style={{
                   width: "100%",
                   height: "auto",
-                  borderBottomRightRadius: 300,
+                  display: "block",
                 }}
               />
             )}
           </div>
-          <div className="col-md-8 col-xs-12 pl-3 py-3">
-            <div className="row center-xs middle-xs p-3">
+          <div className="col-md-8 col-xs-12 py-3">
+            <div className="row center-xs middle-xs">
               <div className="col-xs-12">
                 <Typography tag="h1" className="mb-5">
                   Registry
                 </Typography>
               </div>
               <div className="col-md-8 col-sm-10 col-xs-12">
-                <Typography tag="h6" className="mb-1 mt-2d">
+                <Typography tag="h6">
                   The best present you could possibly give us is your presence.
                   However, if you would like to spoil us, we will soon provide a
                   link to items and activities that pique our interest.
