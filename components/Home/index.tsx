@@ -234,7 +234,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="col-md-6 col-xs-12 center-xs">
+        <div className="col-md-6 col-xs-12 center-xs mb-5">
           <Typography tag="h1" className="mb-3">
             The ART Hotel
           </Typography>
@@ -276,7 +276,7 @@ export default function Home() {
             See rates
           </LinkButton>
         </div>
-        <div className="col-md-6 col-xs-12 center-xs">
+        <div className="col-md-6 col-xs-12 center-xs mb-5">
           <Typography tag="h1" className="mb-3">
             The Curtis
           </Typography>
@@ -315,7 +315,7 @@ export default function Home() {
             See rates
           </LinkButton>
         </div>
-        <div className="row center-xs middle-xs py-5 mt-5 mb-5">
+        <div className="row center-xs middle-xs pt-5 pb-5 mb-5">
           <div className="col-xs-12 col-sm-10 col-md-7">
             <Typography tag="h6">
               If you prefer to stay in a vacation rental, give us a shout! We
