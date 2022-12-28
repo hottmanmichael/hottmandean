@@ -239,7 +239,7 @@ export default function Home() {
             The ART Hotel
           </Typography>
           <Typography tag="h6" className="mb-3">
-            Starting at $286/night
+            Starting around $286/night
           </Typography>
           <Image
             src={ArtHotelImage}
@@ -269,11 +269,11 @@ export default function Home() {
             </div>
           </div>
           <LinkButton
-            href="https://goo.gl/maps/WZivHLtDpt77QJC69"
+            href="https://www.hilton.com/en/book/reservation/deeplink/?ctyhocn=DENRT&arrivalDate=2023-06-09&departureDate=2023-06-10&numRooms=0&numAdults=1&numChildren=0"
             color="forest-green"
             target="_blank"
           >
-            Directions
+            See rates
           </LinkButton>
         </div>
         <div className="col-md-6 col-xs-12 center-xs">
@@ -281,7 +281,7 @@ export default function Home() {
             The Curtis
           </Typography>
           <Typography tag="h6" className="mb-3">
-            Starting at $206/night
+            Starting around $204/night
           </Typography>
           <Image
             src={CurtisHotelImage}
@@ -308,11 +308,11 @@ export default function Home() {
             </div>
           </div>
           <LinkButton
-            href="https://goo.gl/maps/5XDCrX6LHiDSXc3V7"
+            href="https://www.hilton.com/en/book/reservation/deeplink/?ctyhocn=DENCHDT&url=https%3A%2F%2Fwww.hilton.com%2Fen%2Fbook%2Freservation%2Frooms%2F&arrivalDate=2023-06-09&departureDate=2023-06-10&numRooms=1&numAdults=1&numChildren=0"
             color="forest-green"
             target="_blank"
           >
-            Directions
+            See rates
           </LinkButton>
         </div>
         <div className="row center-xs middle-xs py-5 mt-5 mb-5">
