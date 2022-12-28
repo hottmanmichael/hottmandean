@@ -346,7 +346,7 @@ export default function Home() {
         </div>
       </Section>
       {/* Registry */}
-      <Section bgColor="pastel-pink" includePadding>
+      <Section bgColor="pastel-pink">
         <div className="row middle-xs">
           <div className="col-md-4 col-xs-12">
             {!isMediumScreen && (
@@ -364,7 +364,7 @@ export default function Home() {
             )}
           </div>
           <div className="col-md-8 col-xs-12 py-5">
-            <div className="row center-xs middle-xs py-5">
+            <div className="row center-xs middle-xs px-2 py-5">
               <div className="col-xs-12">
                 <Typography tag="h1" className="mb-5">
                   Registry
