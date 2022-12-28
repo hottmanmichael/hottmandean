@@ -372,9 +372,9 @@ export default function Home() {
               </div>
               <div className="col-md-8 col-sm-10 col-xs-12">
                 <Typography tag="h6">
-                  Your presence is all that we ask for. However, if you wish to
-                  honour us with a gift, we will provide a link to items and
-                  activities that pique our interest.
+                  We only ask that you honor us with your presence. However, if
+                  you wish to spoil us with a gift, we will provide a link to
+                  items and activities that pique our interest.
                 </Typography>
                 {/* <Typography tag="h6" className="mb-1 mt-2d">
                   The best present you could possibly give us is your presence.
