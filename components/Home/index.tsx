@@ -346,8 +346,8 @@ export default function Home() {
         </div>
       </Section>
       {/* Registry */}
-      <Section bgColor="pastel-pink" overflow="hidden">
-        <div className="row middle-xs p-0">
+      <Section bgColor="pastel-pink" includePadding>
+        <div className="row middle-xs">
           <div className="col-md-4 col-xs-12">
             {!isMediumScreen && (
               <Image
@@ -363,8 +363,8 @@ export default function Home() {
               />
             )}
           </div>
-          <div className="col-md-8 col-xs-12 py-3">
-            <div className="row center-xs middle-xs">
+          <div className="col-md-8 col-xs-12 py-5">
+            <div className="row center-xs middle-xs py-5">
               <div className="col-xs-12">
                 <Typography tag="h1" className="mb-5">
                   Registry
@@ -372,9 +372,9 @@ export default function Home() {
               </div>
               <div className="col-md-8 col-sm-10 col-xs-12">
                 <Typography tag="h6">
-                  The best present you could possibly give us is your presence.
-                  However, if you would like to spoil us, we will soon provide a
-                  link to items and activities that pique our interest.
+                  Your presence is all that we ask for. However, if you wish to
+                  honour us with a gift, we will provide a link to items and
+                  activities that pique our interest.
                 </Typography>
                 {/* <Typography tag="h6" className="mb-1 mt-2d">
                   The best present you could possibly give us is your presence.
