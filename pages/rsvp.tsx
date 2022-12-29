@@ -1,8 +1,31 @@
+import { InferGetServerSidePropsType } from "next";
+import Head from "next/head";
 import React from "react";
-import BasePage from "../components/BasePage";
+import { getAllGuestsAttendance } from "../src/api/notion";
+import { RSVP } from "../src/components/RSVP";
 
-function RSVP() {
-  return <BasePage title="RSVP" subtitle="Coming soon..."></BasePage>;
+export default function RsvpPage({
+  allGuestsAttendance,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  return (
+    <>
+      <Head>
+        <title>RSVP | Claire & Michael</title>
+      </Head>
+      <RSVP allGuestsAttendance={allGuestsAttendance} />;
+    </>
+  );
 }
 
-export default RSVP;
+export async function getServerSideProps({ req, res }) {
+  res.setHeader(
+    "Cache-Control",
+    "public, s-maxage=10, stale-while-revalidate=59"
+  );
+
+  const allGuestsAttendance = await getAllGuestsAttendance();
+
+  return {
+    props: { allGuestsAttendance },
+  };
+}

@@ -1,4 +1,5 @@
 import { MouseEventHandler, ReactNode } from "react";
+import Link from "next/link";
 import cx from "classnames";
 import { Typography } from "../Typography";
 import styles from "./Button.module.scss";
@@ -13,6 +14,7 @@ interface ButtonBaseProps {
   children: ReactNode;
   color?: ButtonColor;
   className?: string;
+  type?: "submit";
 }
 
 interface LinkButtonProps extends ButtonBaseProps {
@@ -22,9 +24,9 @@ interface LinkButtonProps extends ButtonBaseProps {
 
 export function LinkButton({ href, target, ...rest }: LinkButtonProps) {
   return (
-    <a href={href} target={target}>
+    <Link passHref href={href} target={target}>
       <Button {...rest} onClick={() => {}} />
-    </a>
+    </Link>
   );
 }
 
@@ -37,9 +39,11 @@ export function Button({
   color = "forest-green",
   className,
   children,
+  type,
 }: ButtonProps) {
   return (
     <button
+      type={type}
       className={cx(
         styles.Button,
         {

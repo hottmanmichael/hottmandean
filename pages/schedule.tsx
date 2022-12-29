@@ -1,5 +1,5 @@
 import React from "react";
-import BasePage from "../components/BasePage";
+import BasePage from "../src/components/BasePage";
 
 function Schedule() {
   return <BasePage title="Schedule" subtitle="Coming soon..."></BasePage>;

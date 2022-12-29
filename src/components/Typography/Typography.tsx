@@ -1,18 +1,7 @@
-import { Quicksand } from "@next/font/google";
-import localfont from "@next/font/local";
 import cx from "classnames";
+import { anaktoria, quicksandNormal } from "../../fonts";
 
 import styles from "./Typography.module.scss";
-
-const quicksandNormal = Quicksand({
-  preload: true,
-  variable: "--quicksand",
-});
-const anaktoria = localfont({
-  src: "../../public/fonts/Anaktoria.woff",
-  preload: true,
-  variable: "--anaktoria",
-});
 
 type Tag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p" | "b" | "span";
 type Font = "quicksand" | "anaktoria";

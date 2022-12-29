@@ -1,7 +1,4 @@
-@import "../../styles/variables.scss";
-
-// $screen-height: calc(100vh - $header-height);
-$screen-height: calc(100vh - env(safe-area-inset-bottom));
+@import "../../../styles/variables.scss";
 
 .FullScreenCentered {
   padding: 0rem 0;

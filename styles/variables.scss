@@ -1,4 +1,5 @@
 $header-height: 5rem;
+$screen-height: calc(100vh - env(safe-area-inset-bottom));
 
 $color-off-white: lighten(#f7f9f7, 0.1);
 

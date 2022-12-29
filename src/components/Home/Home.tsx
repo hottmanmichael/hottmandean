@@ -1,22 +1,20 @@
-import Head from "next/head";
 import Image from "next/image";
 import cx from "classnames";
 import { useMediaQuery } from "../../hooks";
 import { Section, SectionHeight } from "../Section";
 import { Blob } from "../Blob";
-
-import styles from "./index.module.scss";
 import { Typography } from "../Typography/Typography";
-
-import HeaderImage from "/public/images/C&M_Engagement_JPEG_1200px_00020.jpg";
-import LandscapeWalkImage from "/public/images/C&M_Engagement_JPEG_1200px_00017.jpg";
-import VerticalKissImage from "/public/images/C&M_Engagement_JPEG_1200px_00011.jpg";
-import ArtHotelImage from "/public/images/art-hotel.jpeg";
-import CurtisHotelImage from "/public/images/curtis-hotel.jpeg";
-import { Button, LinkButton } from "../Button";
+import { LinkButton } from "../Button";
 import { AgendaItem } from "./AgendaItem";
 
-export default function Home() {
+import HeaderImage from "/public/images/C&M_Engagement_JPEG_1200px_00020.jpg";
+import ArtHotelImage from "/public/images/art-hotel.jpeg";
+import CurtisHotelImage from "/public/images/curtis-hotel.jpeg";
+import ShoulderRingImage from "/public/images/C&M_Engagement_JPEG_1200px_00019.jpg";
+
+import styles from "./index.module.scss";
+
+export function Home() {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
   const isMediumScreen = useMediaQuery("(max-width: 1023px)");
 
@@ -27,32 +25,6 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Home | Claire & Michael</title>
-        <meta
-          name="description"
-          content="The wedding of Claire Dean and Michael Hottman"
-        />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/favicon/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon/favicon-16x16.png"
-        />
-        <link rel="manifest" href="/favicon/site.webmanifest"></link>
-      </Head>
-
       <div className={cx(styles.BackgroundImageWrapper)}>
         <Image
           alt="background"
@@ -131,22 +103,23 @@ export default function Home() {
                 <Typography tag="h1" className="mb-5">
                   The Main Event
                 </Typography>
-                <Typography tag="h2" className="my-2">
+                <Typography tag="h3" className="mb-3">
                   Skylight
                 </Typography>
-                <Typography tag="h3" className="col-xs-12 mb-2">
+                <Typography tag="h2" className="col-xs-12 mb-3">
                   June 9th, 2023 at 5:30pm
                 </Typography>
                 <Typography tag="p">833 Santa Fe Drive</Typography>
                 <Typography tag="p">Denver, CO 80204</Typography>
-                <LinkButton
-                  href="https://www.zola.com/wedding/hottmandeanwedding/rsvp"
+                {/* <LinkButton
+                  // href="https://www.zola.com/wedding/hottmandeanwedding/rsvp"
+                  href="/rsvp"
                   className="mt-3"
                   color="pastel-orange"
-                  target="_blank"
+                  // target="_blank"
                 >
                   RSVP Now
-                </LinkButton>
+                </LinkButton> */}
               </div>
             </div>
           </div>
@@ -247,8 +220,9 @@ export default function Home() {
             alt="image"
             sizes="100vw"
             style={{
-              height: 218,
-              width: "auto",
+              maxWidth: 400,
+              height: "auto",
+              width: "100%",
               objectFit: "cover",
               objectPosition: "center",
               borderRadius: 5,
@@ -283,19 +257,22 @@ export default function Home() {
           <Typography tag="h6" className="mb-3">
             Starting around $204/night
           </Typography>
+
           <Image
             src={CurtisHotelImage}
             className="mb-1"
             alt="image"
             sizes="100vw"
             style={{
-              height: 218,
-              width: "auto",
+              maxWidth: 400,
+              height: "auto",
+              width: "100%",
               objectFit: "cover",
               objectPosition: "center",
               borderRadius: 5,
             }}
           />
+
           <Typography tag="h5" bold className="mt-2 mb-1">
             7 minute drive
           </Typography>
@@ -348,10 +325,10 @@ export default function Home() {
       {/* Registry */}
       <Section bgColor="pastel-pink">
         <div className="row middle-xs">
-          <div className="col-md-4 col-xs-12">
+          <div className="col-md-4 col-xs-12 pl-0">
             {!isMediumScreen && (
               <Image
-                src={require("../../public/images/C&M_Engagement_JPEG_1200px_00019.jpg")}
+                src={ShoulderRingImage}
                 placeholder="blur"
                 alt="image"
                 sizes="110vw"
