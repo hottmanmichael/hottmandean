@@ -1,5 +1,3 @@
-import "@formatjs/intl-listformat/polyfill";
-
 import cx from "classnames";
 import Image from "next/image";
 import { Divider } from "@mantine/core";
