@@ -1,5 +1,3 @@
-import "@formatjs/intl-listformat/polyfill";
-
 import { useState, useMemo, forwardRef, useCallback } from "react";
 import Fuse from "fuse.js";
 import { Select, Text } from "@mantine/core";
