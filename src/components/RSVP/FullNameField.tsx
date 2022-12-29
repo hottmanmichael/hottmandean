@@ -48,7 +48,15 @@ export function FullNameField({ allGuestsAttendance }: FullNameFieldProps) {
         ignoreLocation: true,
         threshold: 0.3,
         minMatchCharLength: 3,
-        keys: ["fullName", "additions.fullName", "emailAddress", "phoneNumber"],
+        keys: [
+          {
+            name: "fullName",
+            weight: 2,
+          },
+          "additions.fullName",
+          "emailAddress",
+          "phoneNumber",
+        ],
       }),
     [allGuestsAttendance]
   );
