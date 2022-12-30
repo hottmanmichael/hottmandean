@@ -47,7 +47,7 @@ export function FullNameField({ allGuestsAttendance }: FullNameFieldProps) {
         findAllMatches: true,
         ignoreLocation: true,
         threshold: 0.3,
-        minMatchCharLength: 3,
+        minMatchCharLength: 2,
         keys: [
           {
             name: "fullName",

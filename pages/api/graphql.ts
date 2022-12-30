@@ -1,27 +1,73 @@
 import { createYoga, createSchema } from "graphql-yoga";
+import {
+  createRSVP,
+  CreateRSVPInput,
+  recordSubmission,
+} from "../../src/api/notion";
 
 const typeDefs = /* GraphQL */ `
   type Query {
-    guests: [Guest!]!
+    foo: String
   }
 
-  type Guest {
-    id: String!
-    fullName: String!
-    plusOneFullName: String
-    firstGuestFullName: String
-    secondGuestFullName: String
+  type Mutation {
+    createRSVP(input: CreateRSVPInput): PrimaryGuest!
+  }
+
+  input AdditionalGuestInput {
+    fullName: String
+    firstName: String
+    lastName: String
     isAttending: Boolean
-    isPlusOneAttending: Boolean
-    isFirstGuestAttending: Boolean
-    isSecondGuestAttending: Boolean
+  }
+
+  input PrimaryGuestInput {
+    id: String!
+    emailAddress: String
+    phoneNumber: String
+    dietaryRestrictions: String
+    guestNotes: String
+    fullName: String
+    firstName: String
+    lastName: String
+    isAttending: Boolean
+    additions: [AdditionalGuestInput]!
+  }
+
+  input CreateRSVPInput {
+    guestId: String!
+    guest: PrimaryGuestInput!
+  }
+
+  type AdditionalGuest {
+    fullName: String
+    firstName: String
+    lastName: String
+    isAttending: Boolean
+  }
+
+  type PrimaryGuest {
+    id: String!
+    emailAddress: String
+    phoneNumber: String
+    dietaryRestrictions: String
+    guestNotes: String
+    fullName: String
+    firstName: String
+    lastName: String
+    isAttending: Boolean
+    additions: [AdditionalGuest]!
   }
 `;
 
 const resolvers = {
   Query: {
-    guests() {
-      return [{ name: "Nextjs" }];
+    foo: () => "",
+  },
+  Mutation: {
+    createRSVP(parent: unknown, { input }: { input: CreateRSVPInput }) {
+      recordSubmission(input);
+      return createRSVP(input);
     },
   },
 };
