@@ -1,4 +1,4 @@
-import { Text, SegmentedControl, Chip } from "@mantine/core";
+import { Text, SegmentedControl, Chip, Checkbox } from "@mantine/core";
 import { useCallback } from "react";
 
 interface AttendingInputProps {
@@ -14,18 +14,15 @@ export function AttendingToggle({
 }: AttendingInputProps) {
   return (
     <div className="row middle-xs between-xs mb-1">
-      <Chip
-        color="teal"
-        variant="filled"
-        defaultChecked
-        size="xl"
-        onChange={onChange}
+      <Checkbox
+        onChange={(e) => {
+          onChange(e.target.checked);
+        }}
         checked={value}
-      >
-        <Text fw={500} span td={value ? undefined : "line-through"}>
-          {label}
-        </Text>
-      </Chip>
+        label={label}
+        size="lg"
+        td={value ? undefined : "line-through"}
+      />
     </div>
   );
 }

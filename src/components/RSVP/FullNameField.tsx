@@ -1,4 +1,4 @@
-import { useState, useMemo, forwardRef, useCallback } from "react";
+import { useState, useMemo, forwardRef, useCallback, useRef } from "react";
 import Fuse from "fuse.js";
 import { Select, Text } from "@mantine/core";
 
@@ -33,12 +33,12 @@ interface FullNameFieldProps {
 }
 
 export function FullNameField({ allGuestsAttendance }: FullNameFieldProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
   const { input: guestIdInput } = useField<string>("guestId");
   const { input: guestInput } = useField<InvitedPrimaryGuest | null>("guest");
 
   const [searchValue, setSearchValue] = useState("");
   const debouncedSearchValue = useDebounce(searchValue);
-  console.log({ allGuestsAttendance });
 
   const fuse = useMemo(
     () =>
@@ -83,6 +83,9 @@ export function FullNameField({ allGuestsAttendance }: FullNameFieldProps) {
       const selectedGuest = filteredResults.find((guest) => guest.id === value);
       guestIdInput.onChange(value);
       guestInput.onChange(selectedGuest);
+      // if (inputRef.current) {
+      //   inputRef.current.blur();
+      // }
     },
     [filteredResults, guestIdInput, guestInput]
   );
@@ -90,6 +93,7 @@ export function FullNameField({ allGuestsAttendance }: FullNameFieldProps) {
   return (
     <>
       <Select
+        ref={inputRef}
         size="lg"
         selectOnBlur
         searchable

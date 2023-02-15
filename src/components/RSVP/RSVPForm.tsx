@@ -17,6 +17,8 @@ import {
   CreateRsvpResponse,
   CREATE_RSVP,
 } from "./CREATE_RSVP";
+import { areSomeAttending } from "./utils";
+import { Typography } from "../Typography";
 
 interface RSVPFormProps {
   allGuestsAttendance: InvitedPrimaryGuest[];
@@ -99,8 +101,8 @@ export function RSVPForm({ allGuestsAttendance }: RSVPFormProps) {
         ...arrayMutators,
       }}
     >
-      {(props) => (
-        <form onSubmit={props.handleSubmit}>
+      {({ values, handleSubmit }) => (
+        <form onSubmit={handleSubmit}>
           <LoadingOverlay
             visible={submitting}
             overlayBlur={0.5}
@@ -111,7 +113,7 @@ export function RSVPForm({ allGuestsAttendance }: RSVPFormProps) {
             <FullNameField allGuestsAttendance={allGuestsAttendance} />
           </div>
 
-          {props.values.guest?.id && (
+          {values.guest?.id && (
             <>
               <div className="mb-4">
                 <AttendingInputs />
@@ -119,6 +121,14 @@ export function RSVPForm({ allGuestsAttendance }: RSVPFormProps) {
               <div className="mb-4">
                 <NotesFields />
               </div>
+              {!areSomeAttending(values.guest) && (
+                <div className="mb-4">
+                  <Typography tag="p">
+                    Thank you for your response. Your presence will be missed
+                    but we completely understand!
+                  </Typography>
+                </div>
+              )}
               <Button
                 type="submit"
                 color="forest-green"
