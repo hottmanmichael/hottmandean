@@ -24,8 +24,11 @@ export async function getServerSideProps({ req, res }) {
   );
 
   const allGuestsAttendance = await getAllGuestsAttendance();
+  const omitUs = allGuestsAttendance.filter(
+    (guest) => guest.phoneNumber !== "9705679883"
+  );
 
   return {
-    props: { allGuestsAttendance },
+    props: { allGuestsAttendance: omitUs },
   };
 }

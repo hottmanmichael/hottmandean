@@ -1,6 +1,6 @@
 import cx from "classnames";
 import Image from "next/image";
-import { Divider } from "@mantine/core";
+import { Divider, TextInput } from "@mantine/core";
 
 import { Typography } from "../Typography";
 

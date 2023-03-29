@@ -4,7 +4,7 @@ import { useMediaQuery } from "../../hooks";
 import { Section, SectionHeight } from "../Section";
 import { Blob } from "../Blob";
 import { Typography } from "../Typography/Typography";
-import { LinkButton } from "../Button";
+import { Button, LinkButton } from "../Button";
 import { AgendaItem } from "./AgendaItem";
 
 import HeaderImage from "/public/images/C&M_Engagement_JPEG_1200px_00020.jpg";
@@ -111,15 +111,9 @@ export function Home() {
                 </Typography>
                 <Typography tag="p">833 Santa Fe Drive</Typography>
                 <Typography tag="p">Denver, CO 80204</Typography>
-                {/* <LinkButton
-                  // href="https://www.zola.com/wedding/hottmandeanwedding/rsvp"
-                  href="/rsvp"
-                  className="mt-3"
-                  color="pastel-orange"
-                  // target="_blank"
-                >
+                <LinkButton href="/rsvp" className="mt-3" color="pastel-orange">
                   RSVP Now
-                </LinkButton> */}
+                </LinkButton>
               </div>
             </div>
           </div>
@@ -294,7 +288,7 @@ export function Home() {
         </div>
         <div className="row center-xs middle-xs pt-5 pb-5 mb-5">
           <div className="col-xs-12 col-sm-10 col-md-7">
-            <Typography tag="h6">
+            <Typography tag="h6" bold>
               If you prefer to stay in a vacation rental, give us a shout! We
               would be happy to recommend neighborhoods in Denver that might
               suit your interests.
@@ -311,8 +305,8 @@ export function Home() {
             <div className="col-xs-12 col-sm-8 col-md-5">
               <Typography tag="h6" className="mb-4">
                 If you plan on driving, there is be a private, free-of-charge
-                parking lot available next door for up to 50 cars as well as
-                free street parking surrounding the venue.
+                parking lot nearby for up to 50 cars as well as free street
+                parking surrounding the venue.
               </Typography>
               <Typography tag="h6" className="mb-3">
                 Otherwise we strongly encourage finding transportation via Lyft,
@@ -342,30 +336,25 @@ export function Home() {
           </div>
           <div className="col-md-8 col-xs-12 py-5">
             <div className="row center-xs middle-xs px-2 py-5">
-              <div className="col-xs-12">
+              <div className="col-xs-12" id="registry">
                 <Typography tag="h1" className="mb-5">
                   Registry
                 </Typography>
               </div>
               <div className="col-md-8 col-sm-10 col-xs-12">
-                <Typography tag="h6">
-                  We only ask that you honor us with your presence. However, if
-                  you wish to spoil us with a gift, we will provide a link to
-                  items and activities that pique our interest.
-                </Typography>
-                {/* <Typography tag="h6" className="mb-1 mt-2d">
+                <Typography tag="h6" className="mb-1 mt-2d">
                   The best present you could possibly give us is your presence.
                   However, if you’d like to spoil us, we’ve picked out a few
                   items and activities that pique our interests.
-                </Typography> */}
-                {/* <LinkButton
+                </Typography>
+                <LinkButton
                   href="https://www.zola.com/wedding/hottmandeanwedding/registry"
                   className="mt-3"
                   color="pastel-pink"
                   target="_blank"
                 >
                   View Registry
-                </LinkButton> */}
+                </LinkButton>
               </div>
             </div>
           </div>

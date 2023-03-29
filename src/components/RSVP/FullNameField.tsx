@@ -38,22 +38,25 @@ export function FullNameField({ allGuestsAttendance }: FullNameFieldProps) {
   const { input: guestInput } = useField<InvitedPrimaryGuest | null>("guest");
 
   const [searchValue, setSearchValue] = useState("");
-  const debouncedSearchValue = useDebounce(searchValue);
+  const debouncedSearchValue = useDebounce(searchValue, 350);
 
   const fuse = useMemo(
     () =>
       new Fuse(allGuestsAttendance, {
         includeMatches: true,
-        findAllMatches: true,
+        findAllMatches: false,
         ignoreLocation: true,
         threshold: 0.3,
-        minMatchCharLength: 2,
+        minMatchCharLength: 3,
         keys: [
           {
             name: "fullName",
             weight: 2,
           },
-          "additions.fullName",
+          {
+            name: "additions.fullName",
+            weight: 1.5,
+          },
           "emailAddress",
           "phoneNumber",
         ],
@@ -83,9 +86,6 @@ export function FullNameField({ allGuestsAttendance }: FullNameFieldProps) {
       const selectedGuest = filteredResults.find((guest) => guest.id === value);
       guestIdInput.onChange(value);
       guestInput.onChange(selectedGuest);
-      // if (inputRef.current) {
-      //   inputRef.current.blur();
-      // }
     },
     [filteredResults, guestIdInput, guestInput]
   );
@@ -107,11 +107,11 @@ export function FullNameField({ allGuestsAttendance }: FullNameFieldProps) {
         filter={(v) => !!v}
         onSearchChange={setSearchValue}
         searchValue={searchValue}
-        limit={1}
+        limit={3}
         {...guestIdInput}
         onChange={handleChange}
       />
-      <Text size="sm" className="mt-1">
+      <Text size="sm" className="mt-1" mb={guestIdInput.value ? 0 : 200}>
         Search by phone number, first name, last name, email, or plus one&apos;s
         name
       </Text>
