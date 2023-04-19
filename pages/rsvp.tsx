@@ -6,7 +6,7 @@ import { RSVP } from "../src/components/RSVP";
 
 export default function RsvpPage({
   allGuestsAttendance,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+}: InferGetServerSidePropsType<typeof getStaticProps>) {
   return (
     <>
       <Head>
@@ -17,11 +17,11 @@ export default function RsvpPage({
   );
 }
 
-export async function getServerSideProps({ req, res }) {
-  res.setHeader(
-    "Cache-Control",
-    "public, s-maxage=10, stale-while-revalidate=59"
-  );
+export async function getStaticProps({ req, res }) {
+  // res.setHeader(
+  //   "Cache-Control",
+  //   "public, s-maxage=10, stale-while-revalidate=59"
+  // );
 
   const allGuestsAttendance = await getAllGuestsAttendance();
   const omitUs = allGuestsAttendance.filter(
