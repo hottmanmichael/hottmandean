@@ -111,9 +111,27 @@ export function Home() {
                 </Typography>
                 <Typography tag="p">833 Santa Fe Drive</Typography>
                 <Typography tag="p">Denver, CO 80204</Typography>
-                <LinkButton href="/rsvp" className="mt-3" color="pastel-orange">
-                  RSVP Now
-                </LinkButton>
+                {/*<div className="row">*/}
+                <div>
+                  <LinkButton
+                    href="/rsvp"
+                    className="mt-3"
+                    color="pastel-orange"
+                  >
+                    RSVP Now
+                  </LinkButton>
+                </div>
+                <div>
+                  <LinkButton
+                    href="https://www.zola.com/wedding/hottmandeanwedding/registry"
+                    className="mt-0"
+                    color="pastel-pink"
+                    target="_blank"
+                  >
+                    View Registry
+                  </LinkButton>
+                </div>
+                {/*</div>*/}
               </div>
             </div>
           </div>
@@ -173,6 +191,7 @@ export function Home() {
         <Blob type="cactus7" bottom={-40} right={60} opacity={1} size={130} />
         <Blob type="cactus6" bottom={-12} right={160} size={40} rotation={-3} />
       </Section>
+
       <Section
         bgColor="pastel-green"
         className="row center-xs pb-0"
