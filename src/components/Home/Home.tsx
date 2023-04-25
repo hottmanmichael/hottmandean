@@ -13,6 +13,7 @@ import CurtisHotelImage from "/public/images/curtis-hotel.jpeg";
 import ShoulderRingImage from "/public/images/C&M_Engagement_JPEG_1200px_00019.jpg";
 
 import styles from "./index.module.scss";
+import { QuestionItem } from "./QuestionItem";
 
 export function Home() {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
@@ -121,16 +122,7 @@ export function Home() {
                     RSVP Now
                   </LinkButton>
                 </div>
-                <div>
-                  <LinkButton
-                    href="https://www.zola.com/wedding/hottmandeanwedding/registry"
-                    className="mt-0"
-                    color="pastel-pink"
-                    target="_blank"
-                  >
-                    View Registry
-                  </LinkButton>
-                </div>
+
                 {/*</div>*/}
               </div>
             </div>
@@ -191,7 +183,134 @@ export function Home() {
         <Blob type="cactus7" bottom={-40} right={60} opacity={1} size={130} />
         <Blob type="cactus6" bottom={-12} right={160} size={40} rotation={-3} />
       </Section>
+      {/* Registry */}
+      <Section bgColor="pastel-pink">
+        <div className="row middle-xs">
+          <div className="col-md-4 col-xs-12 pl-0">
+            {!isMediumScreen && (
+              <Image
+                src={ShoulderRingImage}
+                placeholder="blur"
+                alt="image"
+                sizes="110vw"
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  display: "block",
+                }}
+              />
+            )}
+          </div>
+          <div className="col-md-8 col-xs-12 py-5">
+            <div className="row center-xs middle-xs px-2 py-5">
+              <div className="col-xs-12" id="registry">
+                <Typography tag="h1" className="mb-5">
+                  Registry
+                </Typography>
+              </div>
+              <div className="col-md-8 col-sm-10 col-xs-12">
+                <Typography tag="h6" className="mb-1 mt-2d">
+                  The best present you could possibly give us is your presence.
+                  However, if you’d like to spoil us, we are asking for
+                  contributions to our house fund and honeymoon fund.
+                </Typography>
+                <LinkButton
+                  href="https://www.zola.com/wedding/hottmandeanwedding/registry"
+                  className="mt-3"
+                  color="pastel-pink"
+                  target="_blank"
+                >
+                  View Registry
+                </LinkButton>
+              </div>
+            </div>
+          </div>
+        </div>
+      </Section>
+      {/* Questions */}
+      <Section
+        bgColor="off-white"
+        className="row center-xs"
+        includePadding
+        style={{ overflowY: "hidden" }}
+      >
+        <div className="col-xs-12 mt-2 py-5 px-2">
+          <Typography tag="h1" className="pb-5 mb-2">
+            FAQ
+          </Typography>
+          <div className="row center-xs">
+            <div className="col-xs-12 col-sm-8 col-md-6">
+              <QuestionItem
+                title="What should I wear?"
+                text="The dress code is Garden Formal / Semi Formal."
+              />
+              <QuestionItem
+                title="What time should I arrive?"
+                text="The ceremony will begin at 5:30 in the evening. Please plan on arriving between 5 and 5:15 so that we can get started on time."
+              />
+              <QuestionItem
+                title="Are children welcome?"
+                text="While we love your little ones, our wedding is going to be an adults-only event so that everyone can relax and enjoy the evening. We appreciate you making arrangements ahead of time and leaving the kids at home so you can celebrate with us."
+              />
+              <QuestionItem
+                title="Will there be any vegan/vegetarian/gluten free/special diet options?"
+                text="Yes! We are working closely with the caterer to make sure everyone is taken care of and food options at the buffet will have special diet indicators. Please let us know ahead of time in your RSVP or by contacting us if you have any special requests."
+              />
+              <QuestionItem
+                title="Will the wedding be indoors or outdoors?"
+                text="Both! The ceremony will take place indoors, followed by an outdoor cocktail hour while we get the room ready for dinner. Dinner and dancing will take place indoors, but you'll be free to move between the dance floor and the patio."
+              />
+              <QuestionItem
+                title="Will there be transportation? Where should guests park? Is parking free?"
+                text="See below."
+              />
+              <QuestionItem
+                title="I still have questions, what is the best way to contact you?"
+                text="The best way to contact us is by sending an email to hottmandean@gmail.com"
+              />
+            </div>
+          </div>
+        </div>
+        <Blob
+          type="green"
+          right={isSmallScreen ? -500 : -750}
+          opacity={0.35}
+          bottom={-1}
+          rotation={110}
+          size={isSmallScreen ? 700 : 1200}
+        />
+        <Blob
+          type="blue"
+          left={isMediumScreen ? -300 : -450}
+          opacity={0.4}
+          top={100}
+          rotation={167}
+          size={isMediumScreen ? 600 : 900}
+        />
 
+        {/* Transportation */}
+        <div className="col-xs-12 py-5 px-2">
+          <Typography tag="h1" className="mb-5">
+            Transportation
+          </Typography>
+          <div className="row center-xs">
+            <div className="col-xs-12 col-sm-8 col-md-5">
+              <Typography tag="h6" className="mb-4">
+                If you plan on driving, there is be a private, free-of-charge
+                parking lot about 2 blocks away that will fit up to 50 cars.
+                There is also parking around the venue, although Sante Fe Avenue
+                can get busy on a Friday night, so plan accordingly.
+              </Typography>
+              <Typography tag="h6" className="mb-3">
+                Otherwise we strongly encourage finding transportation via Lyft,
+                Uber, taxi, or carpooling with a sober driver.
+              </Typography>
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Accommodations */}
       <Section
         bgColor="pastel-green"
         className="row center-xs pb-0"
@@ -312,70 +431,6 @@ export function Home() {
               would be happy to recommend neighborhoods in Denver that might
               suit your interests.
             </Typography>
-          </div>
-        </div>
-      </Section>
-      <Section bgColor="off-white" className="row center-xs" includePadding>
-        <div className="col-xs-12 mt-2 py-5 px-2">
-          <Typography tag="h1" className="mb-5">
-            Transportation
-          </Typography>
-          <div className="row center-xs">
-            <div className="col-xs-12 col-sm-8 col-md-5">
-              <Typography tag="h6" className="mb-4">
-                If you plan on driving, there is be a private, free-of-charge
-                parking lot nearby for up to 50 cars as well as free street
-                parking surrounding the venue.
-              </Typography>
-              <Typography tag="h6" className="mb-3">
-                Otherwise we strongly encourage finding transportation via Lyft,
-                Uber, taxi, or carpooling with a sober driver.
-              </Typography>
-            </div>
-          </div>
-        </div>
-      </Section>
-      {/* Registry */}
-      <Section bgColor="pastel-pink">
-        <div className="row middle-xs">
-          <div className="col-md-4 col-xs-12 pl-0">
-            {!isMediumScreen && (
-              <Image
-                src={ShoulderRingImage}
-                placeholder="blur"
-                alt="image"
-                sizes="110vw"
-                style={{
-                  width: "100%",
-                  height: "auto",
-                  display: "block",
-                }}
-              />
-            )}
-          </div>
-          <div className="col-md-8 col-xs-12 py-5">
-            <div className="row center-xs middle-xs px-2 py-5">
-              <div className="col-xs-12" id="registry">
-                <Typography tag="h1" className="mb-5">
-                  Registry
-                </Typography>
-              </div>
-              <div className="col-md-8 col-sm-10 col-xs-12">
-                <Typography tag="h6" className="mb-1 mt-2d">
-                  The best present you could possibly give us is your presence.
-                  However, if you’d like to spoil us, we’ve picked out a few
-                  items and activities that pique our interests.
-                </Typography>
-                <LinkButton
-                  href="https://www.zola.com/wedding/hottmandeanwedding/registry"
-                  className="mt-3"
-                  color="pastel-pink"
-                  target="_blank"
-                >
-                  View Registry
-                </LinkButton>
-              </div>
-            </div>
           </div>
         </div>
       </Section>

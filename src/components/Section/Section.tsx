@@ -1,5 +1,6 @@
 import cx from "classnames";
 import styles from "./Section.module.scss";
+import { CSSProperties } from "react";
 
 export enum SectionHeight {
   Medium = 500,
@@ -21,6 +22,7 @@ interface SectionProps {
   className?: string;
   overflow?: "hidden" | "visible";
   includePadding?: true;
+  style?: CSSProperties;
 }
 
 export const Section: React.FC<SectionProps> = ({
@@ -30,6 +32,7 @@ export const Section: React.FC<SectionProps> = ({
   includePadding,
   className,
   children,
+  style,
 }) => {
   const colorClassName = `Background_${bgColor}`;
   const mergedClassName = cx(
@@ -46,6 +49,7 @@ export const Section: React.FC<SectionProps> = ({
       style={{
         minHeight: height,
         overflow,
+        ...style,
       }}
       className={mergedClassName}
     >
