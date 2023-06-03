@@ -267,12 +267,7 @@ export function Home() {
         </div>
       </Section>
       {/* Questions */}
-      <Section
-        bgColor="off-white"
-        className="row center-xs"
-        includePadding
-        style={{ overflowY: "hidden" }}
-      >
+      <Section bgColor="off-white" className="row center-xs" includePadding>
         <div className="col-xs-12 mt-2 py-5 px-2" id="faq">
           <Typography tag="h1" className="pb-5 mb-2">
             FAQ
@@ -365,12 +360,8 @@ export function Home() {
                 target="_blank"
                 color="forest-green"
               >
-                View detailed parking information
+                View parking information
               </LinkButton>
-              {/*<MantineButton variant="subtle" color="dark" size="md">*/}
-              {/*  <a href="/parkingmap.pdf" target="_blank">*/}
-              {/*  </a>*/}
-              {/*</MantineButton>*/}
             </div>
           </div>
         </div>
