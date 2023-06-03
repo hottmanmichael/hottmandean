@@ -1,11 +1,13 @@
 import Image from "next/image";
 import cx from "classnames";
+import { Button as MantineButton } from "@mantine/core";
 import { useMediaQuery } from "../../hooks";
 import { Section, SectionHeight } from "../Section";
 import { Blob } from "../Blob";
 import { Typography } from "../Typography/Typography";
-import { Button, LinkButton } from "../Button";
+import { LinkButton } from "../Button";
 import { AgendaItem } from "./AgendaItem";
+import { QuestionItem } from "./QuestionItem";
 
 import HeaderImage from "/public/images/C&M_Engagement_JPEG_1200px_00020.jpg";
 import ArtHotelImage from "/public/images/art-hotel.jpeg";
@@ -13,7 +15,6 @@ import CurtisHotelImage from "/public/images/curtis-hotel.jpeg";
 import ShoulderRingImage from "/public/images/C&M_Engagement_JPEG_1200px_00019.jpg";
 
 import styles from "./index.module.scss";
-import { QuestionItem } from "./QuestionItem";
 
 export function Home() {
   const isSmallScreen = useMediaQuery("(max-width: 600px)");
@@ -23,6 +24,14 @@ export function Home() {
   const headingClassName = cx(styles.Heading, {
     [styles.HeadingCenter]: isMediumScreen,
   });
+
+  const navToId = (id: string) => () => {
+    const element = document.querySelector(`#${id}`);
+    window.scrollTo({
+      top: element.getBoundingClientRect().top + window.scrollY,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <>
@@ -112,18 +121,48 @@ export function Home() {
                 </Typography>
                 <Typography tag="p">833 Santa Fe Drive</Typography>
                 <Typography tag="p">Denver, CO 80204</Typography>
-                {/*<div className="row">*/}
                 <div>
                   <LinkButton
-                    href="/rsvp"
+                    target="_blank"
+                    href="https://goo.gl/maps/v7MYmyv5kyAVaHXK8?coh=178571&entry=tt"
                     className="mt-3"
                     color="pastel-orange"
                   >
-                    RSVP Now
+                    Get Directions
                   </LinkButton>
                 </div>
-
-                {/*</div>*/}
+                <div className="center-xs row">
+                  <div className="col-xs-12">
+                    <MantineButton
+                      onClick={navToId("faq")}
+                      variant="subtle"
+                      color="dark"
+                      size="md"
+                    >
+                      FAQ
+                    </MantineButton>
+                  </div>
+                  <div className="col-xs-12">
+                    <MantineButton
+                      onClick={navToId("registry")}
+                      variant="subtle"
+                      color="dark"
+                      size="md"
+                    >
+                      Registry
+                    </MantineButton>
+                  </div>
+                  <div className="col-xs-12">
+                    <MantineButton
+                      onClick={navToId("transportation")}
+                      variant="subtle"
+                      color="dark"
+                      size="md"
+                    >
+                      Parking & Transportation Info
+                    </MantineButton>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -185,7 +224,7 @@ export function Home() {
       </Section>
       {/* Registry */}
       <Section bgColor="pastel-pink">
-        <div className="row middle-xs">
+        <div className="row middle-xs" id="registry">
           <div className="col-md-4 col-xs-12 pl-0">
             {!isMediumScreen && (
               <Image
@@ -203,7 +242,7 @@ export function Home() {
           </div>
           <div className="col-md-8 col-xs-12 py-5">
             <div className="row center-xs middle-xs px-2 py-5">
-              <div className="col-xs-12" id="registry">
+              <div className="col-xs-12">
                 <Typography tag="h1" className="mb-5">
                   Registry
                 </Typography>
@@ -234,7 +273,7 @@ export function Home() {
         includePadding
         style={{ overflowY: "hidden" }}
       >
-        <div className="col-xs-12 mt-2 py-5 px-2">
+        <div className="col-xs-12 mt-2 py-5 px-2" id="faq">
           <Typography tag="h1" className="pb-5 mb-2">
             FAQ
           </Typography>
@@ -289,22 +328,49 @@ export function Home() {
         />
 
         {/* Transportation */}
-        <div className="col-xs-12 py-5 px-2">
+        <div className="col-xs-12 py-5 px-2" id="transportation">
           <Typography tag="h1" className="mb-5">
             Transportation
           </Typography>
           <div className="row center-xs">
             <div className="col-xs-12 col-sm-8 col-md-5">
-              <Typography tag="h6" className="mb-4">
-                If you plan on driving, there is be a private, free-of-charge
-                parking lot about 2 blocks away that will fit up to 50 cars.
-                There is also parking around the venue, although Sante Fe Avenue
-                can get busy on a Friday night, so plan accordingly.
-              </Typography>
               <Typography tag="h6" className="mb-3">
+                If you plan on driving, there is a private, free-of-charge
+                parking lot about 2 blocks away that will fit up to 50 cars.
+                There is also street parking around the venue, although Sante Fe
+                Avenue can get busy on a Friday night, so plan accordingly.
+              </Typography>
+              <Typography tag="h6" className="mb-5">
                 Otherwise we strongly encourage finding transportation via Lyft,
                 Uber, taxi, or carpooling with a sober driver.
               </Typography>
+              <Typography tag="h2" className="mb-2 pt-3">
+                Parking Lot
+              </Typography>
+              <Typography bold tag="p">
+                <a
+                  href="https://goo.gl/maps/WWUAU36pJ1oqKEQQA"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  990 Kalamath St, Denver, CO 80204
+                </a>
+              </Typography>
+              <Typography style={{ fontSize: 13 }} tag="p" className="mb-1">
+                Please park on South side of lot, furthest away from the
+                building whenever possible.
+              </Typography>
+              <LinkButton
+                href="/parkingmap.pdf"
+                target="_blank"
+                color="forest-green"
+              >
+                View detailed parking information
+              </LinkButton>
+              {/*<MantineButton variant="subtle" color="dark" size="md">*/}
+              {/*  <a href="/parkingmap.pdf" target="_blank">*/}
+              {/*  </a>*/}
+              {/*</MantineButton>*/}
             </div>
           </div>
         </div>

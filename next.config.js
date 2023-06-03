@@ -6,4 +6,7 @@ module.exports = {
       { loader: "@next/font/google", options: { subsets: ["latin"] } },
     ],
   },
+  images: {
+    domains: ['api.mapbox.com']
+  },
 };

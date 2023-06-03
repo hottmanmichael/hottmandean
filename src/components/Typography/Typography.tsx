@@ -12,6 +12,7 @@ interface TypographyProps {
   bold?: boolean;
   font?: Font;
   weight?: "100" | "300" | "500" | "700" | "900";
+  style?: any;
 }
 
 const getFontClassName = (tag: Tag, font?: Font) => {
@@ -32,9 +33,11 @@ export const Typography: React.FC<TypographyProps> = ({
   font,
   weight,
   children,
+  style,
 }) => {
   return (
     <Tag
+      style={style}
       className={cx(
         getFontClassName(Tag, font),
         {
